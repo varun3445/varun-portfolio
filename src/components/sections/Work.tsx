@@ -1,33 +1,7 @@
 import { Button } from "@/components/Button";
 import { ProjectCard } from "@/components/ProjectCard";
 import { Reveal } from "@/components/Reveal";
-
-const PROJECTS = [
-  {
-    mainImage: "/images/n6QvmvH1FO1AYmltWB2ffHNJIds.png",
-    projectTitle: "IDXF - Idea Forge",
-    services: ["Mobile App", "Networking Platform", "AI Powered"],
-    link: "/works/idxf",
-  },
-  {
-    mainImage: "/images/FTaIF6vN0dinKBMZ0o8rryptIwE.png",
-    projectTitle: "Pupspot-AR",
-    services: ["Mobile App", "Community Platform", "AR Experience"],
-    link: "/works/pupspot-ar",
-  },
-  {
-    mainImage: "/images/1Fbz3ZMDBgHq9zCQAHR9wL6zV9U.png",
-    projectTitle: "Plateform - Hounslow",
-    services: ["Mobile App", "Community Platform", "Government"],
-    link: "/works/plateform",
-  },
-  {
-    mainImage: "/images/AozA2pshbJnjHkHaRNwe98m77Y.png",
-    projectTitle: "BBMP Ride-Share",
-    services: ["Driver Interface", "Ticketing System", "Vehicle HMI"],
-    link: "/works/bbmp",
-  },
-];
+import { PROJECTS } from "@/data/projects";
 
 export function Work() {
   return (
@@ -47,7 +21,7 @@ export function Work() {
         </h3>
       </div>
 
-      <div className="flex flex-col gap-16">
+      <div className="grid grid-cols-1 gap-x-[24px] gap-y-16 desktop:grid-cols-2">
         {PROJECTS.map((project, i) => (
           <Reveal key={project.projectTitle} delay={i * 0.05}>
             <ProjectCard {...project} />

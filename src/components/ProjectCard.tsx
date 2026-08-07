@@ -9,9 +9,16 @@ type ProjectCardProps = {
   projectTitle: string;
   services: string[];
   link?: string;
+  status?: "published" | "building";
 };
 
-export function ProjectCard({ mainImage, projectTitle, services, link }: ProjectCardProps) {
+export function ProjectCard({
+  mainImage,
+  projectTitle,
+  services,
+  link,
+  status = "published",
+}: ProjectCardProps) {
   const { setVariant } = useCursor();
   const content = (
     <div
@@ -24,15 +31,18 @@ export function ProjectCard({ mainImage, projectTitle, services, link }: Project
           src={mainImage}
           alt={projectTitle}
           fill
-          sizes="(min-width: 768px) 90vw, 100vw"
+          sizes="(min-width: 1200px) 45vw, 90vw"
           className="object-cover transition-transform duration-500 group-hover:scale-105"
         />
       </div>
-      <h3 className="font-clash text-3xl font-medium">{projectTitle}</h3>
+      <div className="flex items-baseline justify-between gap-4">
+        <h3 className="font-clash text-3xl font-medium">{projectTitle}</h3>
+        <span className="shrink-0 text-sm text-gray-2">
+          {status === "published" ? "Case Study" : "Building..."}
+        </span>
+      </div>
       <div className="h-px w-full bg-black" />
-      <p className="text-sm text-gray-2">
-        {services.filter(Boolean).join(" • ")}
-      </p>
+      <p className="text-sm text-gray-2">{services.filter(Boolean).join(" • ")}</p>
     </div>
   );
 
