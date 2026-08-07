@@ -68,9 +68,11 @@ export function Process() {
                 key={step.number}
                 className="flex h-[420px] w-[320px] shrink-0 flex-col gap-4 rounded-[15px] border border-black p-8 tablet:h-[480px] md:w-[440px]"
               >
-                <h4 className="text-[28px] font-medium tablet:text-[36px] desktop:text-[44px]">
-                  {step.step}
-                </h4>
+                <div className="flex min-h-[68px] items-start tablet:min-h-[88px] desktop:min-h-[108px]">
+                  <h4 className="text-[28px] font-medium leading-[1.2] tablet:text-[36px] desktop:text-[44px]">
+                    {step.step}
+                  </h4>
+                </div>
                 <span className="text-6xl font-medium tablet:text-8xl desktop:text-[144px]">
                   {step.number}
                 </span>

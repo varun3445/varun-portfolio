@@ -22,6 +22,10 @@ export function SplineEmbed({ url, className }: { url: string; className?: strin
           bottom-right "Built with Spline" watermark badge (anchored to the
           scaled host's own corner) gets pushed outside the visible crop,
           matching how the original Framer embed hides it. */}
+      {/* pointer-events: none — this is a decorative background scene, not an
+          interactive 3D viewer. Without this, Spline's own orbit/zoom drag
+          handling captures wheel events and blocks page scroll entirely
+          whenever the cursor is over it. */}
       {/* @ts-expect-error custom element */}
       <spline-viewer
         url={url}
@@ -33,6 +37,7 @@ export function SplineEmbed({ url, className }: { url: string; className?: strin
           width: "118%",
           height: "130%",
           transform: "translate(-50%, -50%)",
+          pointerEvents: "none",
         }}
       />
     </div>

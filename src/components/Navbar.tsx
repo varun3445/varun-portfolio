@@ -37,50 +37,52 @@ export function Navbar() {
       initial={{ y: 0 }}
       animate={{ y: hidden ? -100 : 0 }}
       transition={{ type: "spring", stiffness: 400, damping: 30 }}
-      className="fixed inset-x-0 top-0 z-50 flex items-center justify-between bg-white px-6 py-6 md:px-10"
+      className="fixed inset-x-0 top-0 z-50 bg-white"
     >
-      <Logo size={36} />
+      <div className="relative mx-auto flex max-w-[1280px] items-center justify-between px-[15px] py-6 tablet:px-[30px] desktop:px-[50px]">
+        <Logo size={45} />
 
-      <div className="hidden items-center gap-1 md:flex">
-        {LINKS.map((link) => (
-          <NavLink key={link.href} title={link.title} href={link.href} />
-        ))}
-        <NavLink title="RESUME" href={RESUME_LINK} variant="fill" />
-      </div>
-
-      <button
-        type="button"
-        aria-label={mobileOpen ? "Close menu" : "Open menu"}
-        onClick={() => setMobileOpen((v) => !v)}
-        className="relative flex h-8 w-8 items-center justify-center md:hidden"
-      >
-        <motion.span
-          animate={mobileOpen ? { rotate: -45, y: 0 } : { rotate: 0, y: -6 }}
-          className="absolute h-0.5 w-5 rounded-full bg-black"
-        />
-        <motion.span
-          animate={mobileOpen ? { opacity: 0 } : { opacity: 1 }}
-          className="absolute h-0.5 w-5 rounded-full bg-black"
-        />
-        <motion.span
-          animate={mobileOpen ? { rotate: 45, y: 0 } : { rotate: 0, y: 6 }}
-          className="absolute h-0.5 w-5 rounded-full bg-black"
-        />
-      </button>
-
-      {mobileOpen && (
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -10 }}
-          className="absolute left-0 right-0 top-full mt-2 flex flex-col gap-1 rounded-3xl bg-white p-3 shadow-lg shadow-black/20 md:hidden"
-        >
+        <div className="hidden items-center gap-1 md:flex">
           {LINKS.map((link) => (
             <NavLink key={link.href} title={link.title} href={link.href} />
           ))}
           <NavLink title="RESUME" href={RESUME_LINK} variant="fill" />
-        </motion.div>
-      )}
+        </div>
+
+        <button
+          type="button"
+          aria-label={mobileOpen ? "Close menu" : "Open menu"}
+          onClick={() => setMobileOpen((v) => !v)}
+          className="relative flex h-8 w-8 items-center justify-center md:hidden"
+        >
+          <motion.span
+            animate={mobileOpen ? { rotate: -45, y: 0 } : { rotate: 0, y: -6 }}
+            className="absolute h-0.5 w-5 rounded-full bg-black"
+          />
+          <motion.span
+            animate={mobileOpen ? { opacity: 0 } : { opacity: 1 }}
+            className="absolute h-0.5 w-5 rounded-full bg-black"
+          />
+          <motion.span
+            animate={mobileOpen ? { rotate: 45, y: 0 } : { rotate: 0, y: 6 }}
+            className="absolute h-0.5 w-5 rounded-full bg-black"
+          />
+        </button>
+
+        {mobileOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            className="absolute left-0 right-0 top-full mt-2 flex flex-col gap-1 rounded-3xl bg-white p-3 shadow-lg shadow-black/20 md:hidden"
+          >
+            {LINKS.map((link) => (
+              <NavLink key={link.href} title={link.title} href={link.href} />
+            ))}
+            <NavLink title="RESUME" href={RESUME_LINK} variant="fill" />
+          </motion.div>
+        )}
+      </div>
     </motion.nav>
   );
 }
