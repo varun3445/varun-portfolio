@@ -26,7 +26,7 @@ export function ProjectCard({
       onMouseLeave={() => setVariant("default")}
       className="group flex flex-col gap-6"
     >
-      <div className="relative aspect-[2.2/1] w-full overflow-hidden rounded-3xl bg-surface">
+      <div className="relative aspect-[2.2/1] w-full overflow-hidden rounded-3xl bg-surface desktop-lg:aspect-[1.38/1]">
         <Image
           src={mainImage}
           alt={projectTitle}
@@ -36,7 +36,9 @@ export function ProjectCard({
         />
       </div>
       <div className="flex items-baseline justify-between gap-4">
-        <h3 className="font-clash text-3xl font-medium">{projectTitle}</h3>
+        <h3 className="text-[22px] font-medium tablet:text-[28px] desktop-lg:text-[32px]">
+          {projectTitle}
+        </h3>
         <span className="shrink-0 text-sm text-gray-2">
           {status === "published" ? "Case Study" : "Building..."}
         </span>
