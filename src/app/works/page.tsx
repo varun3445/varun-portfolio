@@ -1,6 +1,5 @@
 import { Button } from "@/components/Button";
 import { ProjectCard } from "@/components/ProjectCard";
-import { Reveal } from "@/components/Reveal";
 import { CtaFooter } from "@/components/sections/CtaFooter";
 import { PROJECTS } from "@/data/projects";
 
@@ -19,10 +18,8 @@ export default function WorksPage() {
 
       <section className="w-full px-[15px] pb-24 tablet:px-[30px] desktop:px-[40px]">
         <div className="grid grid-cols-1 gap-x-[24px] gap-y-16 desktop:grid-cols-2">
-          {PROJECTS.map((project, i) => (
-            <Reveal key={project.projectTitle} delay={i * 0.05}>
-              <ProjectCard {...project} />
-            </Reveal>
+          {PROJECTS.map((project) => (
+            <ProjectCard key={project.projectTitle} {...project} />
           ))}
         </div>
         <div className="mt-14 flex justify-center">

@@ -1,5 +1,11 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { SplineEmbed } from "@/components/SplineEmbed";
 import { Stat } from "@/components/Stat";
+
+const spring = { type: "spring" as const, stiffness: 300, damping: 40 };
+const viewport = { once: true, amount: 0 as const, margin: "0px 0px 100px 0px" };
 
 export function AboutMe() {
   return (
@@ -7,26 +13,50 @@ export function AboutMe() {
       id="about"
       className="flex w-full flex-col gap-[30px] bg-white px-[15px] pb-[40px] tablet:gap-[50px] tablet:px-[30px] tablet:pb-[50px] desktop:gap-[60px] desktop:px-[40px] desktop:pb-[96px]"
     >
-      <div className="h-px w-full bg-black" />
+      <motion.div
+        className="h-px w-full bg-black"
+        initial={{ opacity: 0, y: 60 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={viewport}
+        transition={{ ...spring, delay: 0 }}
+      />
 
       <div className="flex flex-col gap-6 tablet:flex-row tablet:items-start tablet:justify-between">
-        <p className="text-base font-medium">
+        <motion.p
+          className="text-base font-medium"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={viewport}
+          transition={{ ...spring, delay: 0.15 }}
+        >
           Based in London
           <br />
           and working worldwide.
-        </p>
-        <p className="text-base font-medium tablet:w-[65%] tablet:text-right desktop:w-1/2">
+        </motion.p>
+        <motion.p
+          className="text-base font-medium tablet:w-[65%] tablet:text-right desktop:w-1/2"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={viewport}
+          transition={{ ...spring, delay: 0.3 }}
+        >
           Passionate Designer and Developer Crafting Visually Captivating Websites with
           No-Code Solutions
-        </p>
+        </motion.p>
       </div>
 
-      <div className="relative -mx-[15px] h-[70vh] w-[calc(100%+30px)] overflow-hidden bg-black tablet:-mx-[30px] tablet:w-[calc(100%+60px)] desktop:-mx-[40px] desktop:h-screen desktop:w-[calc(100%+80px)]">
+      <motion.div
+        className="relative -mx-[15px] h-[70vh] w-[calc(100%+30px)] overflow-hidden bg-black tablet:-mx-[30px] tablet:w-[calc(100%+60px)] desktop:-mx-[40px] desktop:h-screen desktop:w-[calc(100%+80px)]"
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={viewport}
+        transition={{ type: "tween", ease: [0.12, 0.23, 0.5, 1], duration: 0.6, delay: 0.45 }}
+      >
         <SplineEmbed
           url="https://prod.spline.design/Z2S2CDeYF6K7Shzg/scene.splinecode"
           className="h-full w-full"
         />
-      </div>
+      </motion.div>
 
       <div className="flex flex-col gap-6 desktop:flex-row desktop:items-start desktop:gap-[30px]">
         <div className="flex items-center gap-2">

@@ -1,5 +1,3 @@
-import { Reveal } from "@/components/Reveal";
-
 const EXPERIENCE = [
   {
     companyName: "WQA (UK) Limited",
@@ -98,13 +96,11 @@ export function Timeline() {
             My Journey
           </h3>
         </div>
-        <Reveal>
-          <div className="flex flex-col">
-            {EXPERIENCE.map((item) => (
-              <TimelineCard key={item.companyName} {...item} />
-            ))}
-          </div>
-        </Reveal>
+        <div className="flex flex-col">
+          {EXPERIENCE.map((item) => (
+            <TimelineCard key={item.companyName} {...item} />
+          ))}
+        </div>
       </div>
 
       <div className="flex flex-col gap-8">
@@ -120,13 +116,11 @@ export function Timeline() {
             Where I Studied
           </h3>
         </div>
-        <Reveal>
-          <div className="flex flex-col">
-            {EDUCATION.map((item) => (
-              <TimelineCard key={item.companyName} {...item} />
-            ))}
-          </div>
-        </Reveal>
+        <div className="flex flex-col">
+          {EDUCATION.map((item) => (
+            <TimelineCard key={item.companyName} {...item} />
+          ))}
+        </div>
       </div>
     </section>
   );

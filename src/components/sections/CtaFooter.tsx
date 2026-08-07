@@ -1,5 +1,10 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { Button } from "@/components/Button";
-import { Reveal } from "@/components/Reveal";
+
+const spring = { type: "spring" as const, stiffness: 200, damping: 30 };
+const viewport = { once: true, amount: 0 as const, margin: "0px 0px 100px 0px" };
 
 export function CtaFooter() {
   return (
@@ -10,18 +15,41 @@ export function CtaFooter() {
       <div className="flex w-full flex-col">
         <div className="h-px w-full bg-black" />
 
-        <Reveal className="flex flex-col items-center gap-10 py-24 text-center">
+        <div className="flex flex-col items-center gap-10 py-24 text-center">
           <p className="text-[18px] font-medium uppercase tracking-wide text-gray-2 desktop:text-[20px] desktop-lg:text-[22px]">
-            Have a project in mind?
+            <motion.span
+              className="inline-block"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={viewport}
+              transition={{ ...spring, delay: 0 }}
+            >
+              Have a project{" "}
+            </motion.span>
+            <motion.span
+              className="inline-block"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={viewport}
+              transition={{ ...spring, delay: 0.3 }}
+            >
+              in mind?
+            </motion.span>
           </p>
-          <h2 className="text-[48px] font-medium uppercase leading-[1.2] tablet:text-[64px] desktop:text-[98px] desktop-lg:text-[118px]">
+          <motion.h2
+            className="text-[48px] font-medium uppercase leading-[1.2] tablet:text-[64px] desktop:text-[98px] desktop-lg:text-[118px]"
+            initial={{ opacity: 0, y: 130 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={viewport}
+            transition={{ ...spring, delay: 0.6 }}
+          >
             Let&apos;s Work Together
-          </h2>
+          </motion.h2>
           <Button
             title="Get In Touch"
             href="mailto:varun3445@gmail.com?subject=Reaching%20out%20to%20you%20regarding%20%3Csubject%3E&body=Hey%20Varun%2C%0A%0A%3CBody%3E%0A%0A%0ARegards%2C%0AYour%20Name"
           />
-        </Reveal>
+        </div>
 
         <footer className="flex flex-col items-center justify-between gap-6 border-t border-black py-10 md:flex-row">
           <p className="text-sm font-medium uppercase tracking-wide">© 2025 Varun Srivathsan</p>

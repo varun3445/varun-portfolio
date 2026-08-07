@@ -1,6 +1,5 @@
 import { Button } from "@/components/Button";
 import { ProjectCard } from "@/components/ProjectCard";
-import { Reveal } from "@/components/Reveal";
 import { PROJECTS } from "@/data/projects";
 
 export function Work() {
@@ -22,10 +21,8 @@ export function Work() {
       </div>
 
       <div className="grid grid-cols-1 gap-x-[24px] gap-y-16 desktop:grid-cols-2">
-        {PROJECTS.map((project, i) => (
-          <Reveal key={project.projectTitle} delay={i * 0.05}>
-            <ProjectCard {...project} />
-          </Reveal>
+        {PROJECTS.map((project) => (
+          <ProjectCard key={project.projectTitle} {...project} />
         ))}
       </div>
 
