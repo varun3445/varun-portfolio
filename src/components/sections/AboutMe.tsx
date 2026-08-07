@@ -23,7 +23,7 @@ export function AboutMe() {
 
       <div className="flex flex-col gap-6 tablet:flex-row tablet:items-start tablet:justify-between">
         <motion.p
-          className="text-base font-medium"
+          className="text-[16px] font-medium tablet:text-[18px] desktop:text-[20px] desktop-lg:text-[22px]"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={viewport}
@@ -34,7 +34,7 @@ export function AboutMe() {
           and working worldwide.
         </motion.p>
         <motion.p
-          className="text-base font-medium tablet:w-[65%] tablet:text-right desktop:w-1/2"
+          className="text-[16px] font-medium tablet:w-[65%] tablet:text-[18px] tablet:text-right desktop:w-1/2 desktop:text-[20px] desktop-lg:text-[22px]"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={viewport}

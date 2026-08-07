@@ -51,7 +51,7 @@ export function Process() {
       </div>
 
       <div ref={wrapperRef} className="relative h-[300vh]">
-        <div className="sticky top-16 flex w-full flex-col gap-[30px] overflow-hidden py-14 tablet:gap-[50px] desktop:gap-[60px]">
+        <div className="sticky top-0 flex h-screen w-full flex-col justify-center gap-[30px] overflow-hidden py-20 tablet:gap-[50px] desktop:gap-[60px]">
           <div className="flex items-center gap-2">
             <span className="h-2.5 w-2.5 rounded-full bg-black" />
             <h2 className="text-[16px] font-medium uppercase tracking-wide desktop:text-[18px]">
@@ -76,7 +76,9 @@ export function Process() {
                 <span className="text-6xl font-medium tablet:text-8xl desktop:text-[144px]">
                   {step.number}
                 </span>
-                <p className="text-sm leading-relaxed text-gray-2">{step.description}</p>
+                <p className="text-[14px] leading-relaxed text-gray-2 desktop:text-[16px]">
+                  {step.description}
+                </p>
               </div>
             ))}
           </motion.div>

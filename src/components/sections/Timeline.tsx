@@ -61,21 +61,59 @@ function TimelineCard({
   description?: string;
 }) {
   return (
-    <div className="flex flex-col gap-6 py-10">
+    <div className="flex flex-col gap-6 py-10 first:pt-0">
       <div className="flex items-center gap-2">
         <span className="h-2 w-2 rounded-full bg-black" />
-        <span className="text-sm text-gray-2">{timeline}</span>
+        <span className="text-[14px] text-gray-2 desktop:text-[16px]">{timeline}</span>
       </div>
       <div className="flex flex-col gap-1">
         <h4 className="text-[32px] font-medium tablet:text-[36px] desktop:text-[40px] desktop-lg:text-[44px]">
           {companyName}
         </h4>
-        <p className="text-base text-gray-2">{position}</p>
+        <p className="text-[16px] text-gray-2 tablet:text-[18px] desktop:text-[20px] desktop-lg:text-[22px]">
+          {position}
+        </p>
       </div>
       {description && (
-        <p className="max-w-2xl text-base leading-relaxed text-gray-2">{description}</p>
+        <p className="max-w-2xl text-[16px] leading-relaxed text-gray-2 tablet:text-[18px] desktop:text-[20px] desktop-lg:text-[22px]">
+          {description}
+        </p>
       )}
       <div className="h-px w-full bg-black" />
+    </div>
+  );
+}
+
+function TimelineGroup({
+  label,
+  title,
+  items,
+}: {
+  label: string;
+  title: string;
+  items: typeof EXPERIENCE;
+}) {
+  return (
+    <div className="flex flex-col gap-8">
+      <div className="h-px w-full bg-black" />
+      <div className="flex flex-col gap-[30px] desktop:flex-row">
+        <div className="flex flex-1 flex-col gap-[10px] desktop:sticky desktop:top-[60px] desktop:self-start">
+          <div className="flex items-center gap-2">
+            <span className="h-2.5 w-2.5 rounded-full bg-black" />
+            <h2 className="text-[16px] font-medium uppercase tracking-wide desktop:text-[18px]">
+              {label}
+            </h2>
+          </div>
+          <h3 className="text-[36px] font-medium capitalize leading-[1.1] tablet:text-[68px] desktop:text-[84px] desktop-lg:text-[96px]">
+            {title}
+          </h3>
+        </div>
+        <div className="flex flex-col desktop:w-[49%]">
+          {items.map((item) => (
+            <TimelineCard key={item.companyName} {...item} />
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
@@ -83,45 +121,8 @@ function TimelineCard({
 export function Timeline() {
   return (
     <section className="flex w-full flex-col gap-[30px] bg-white px-[15px] py-[60px] tablet:gap-[50px] tablet:px-[30px] tablet:py-[50px] desktop:gap-[60px] desktop:px-[40px] desktop:py-[60px]">
-      <div className="flex flex-col gap-8">
-        <div className="h-px w-full bg-black" />
-        <div className="flex flex-col gap-2">
-          <div className="flex items-center gap-2">
-            <span className="h-2.5 w-2.5 rounded-full bg-black" />
-            <h2 className="text-[16px] font-medium uppercase tracking-wide desktop:text-[18px]">
-              Excperience
-            </h2>
-          </div>
-          <h3 className="text-[36px] font-medium capitalize leading-[1.1] tablet:text-[68px] desktop:text-[84px] desktop-lg:text-[96px]">
-            My Journey
-          </h3>
-        </div>
-        <div className="flex flex-col">
-          {EXPERIENCE.map((item) => (
-            <TimelineCard key={item.companyName} {...item} />
-          ))}
-        </div>
-      </div>
-
-      <div className="flex flex-col gap-8">
-        <div className="h-px w-full bg-black" />
-        <div className="flex flex-col gap-2">
-          <div className="flex items-center gap-2">
-            <span className="h-2.5 w-2.5 rounded-full bg-black" />
-            <h2 className="text-[16px] font-medium uppercase tracking-wide desktop:text-[18px]">
-              Education
-            </h2>
-          </div>
-          <h3 className="text-[36px] font-medium capitalize leading-[1.1] tablet:text-[68px] desktop:text-[84px] desktop-lg:text-[96px]">
-            Where I Studied
-          </h3>
-        </div>
-        <div className="flex flex-col">
-          {EDUCATION.map((item) => (
-            <TimelineCard key={item.companyName} {...item} />
-          ))}
-        </div>
-      </div>
+      <TimelineGroup label="Excperience" title="My Journey" items={EXPERIENCE} />
+      <TimelineGroup label="Education" title="Where I Studied" items={EDUCATION} />
     </section>
   );
 }

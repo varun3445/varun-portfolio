@@ -39,12 +39,14 @@ export function ProjectCard({
         <h3 className="text-[22px] font-medium tablet:text-[28px] desktop-lg:text-[32px]">
           {projectTitle}
         </h3>
-        <span className="shrink-0 text-sm text-gray-2">
+        <span className="shrink-0 text-[14px] text-gray-2 desktop:text-[16px]">
           {status === "published" ? "Case Study" : "Building..."}
         </span>
       </div>
       <div className="h-px w-full bg-black" />
-      <p className="text-sm text-gray-2">{services.filter(Boolean).join(" • ")}</p>
+      <p className="text-[14px] text-gray-2 desktop:text-[16px]">
+        {services.filter(Boolean).join(" • ")}
+      </p>
     </div>
   );
 
