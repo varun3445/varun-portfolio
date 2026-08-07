@@ -127,7 +127,10 @@ function TimelineGroup({
 
 export function Timeline() {
   return (
-    <section className="flex w-full flex-col gap-[30px] bg-white px-[15px] py-[60px] tablet:gap-[50px] tablet:px-[30px] tablet:py-[50px] desktop:gap-[60px] desktop:px-[40px] desktop:py-[60px]">
+    <section
+      id="journey"
+      className="flex w-full scroll-mt-[110px] flex-col gap-[30px] bg-white px-[15px] py-[60px] tablet:gap-[50px] tablet:px-[30px] tablet:py-[50px] desktop:gap-[60px] desktop:px-[40px] desktop:py-[60px]"
+    >
       <TimelineGroup label="Excperience" title="My Journey" items={EXPERIENCE} />
       <TimelineGroup label="Education" title="Where I Studied" items={EDUCATION} />
     </section>

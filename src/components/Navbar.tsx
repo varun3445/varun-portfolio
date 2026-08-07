@@ -8,7 +8,7 @@ import { NavLink } from "./NavLink";
 const LINKS = [
   { title: "HOME", href: "/" },
   { title: "WORK", href: "/works" },
-  { title: "ABOUT", href: "/#about" },
+  { title: "ABOUT", href: "/#journey" },
 ];
 
 const RESUME_LINK =
