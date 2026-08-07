@@ -22,6 +22,7 @@ export function ProjectCard({
   const { setVariant } = useCursor();
   const content = (
     <div
+      data-cursor="work"
       onMouseEnter={() => setVariant("work")}
       onMouseLeave={() => setVariant("default")}
       className="group flex flex-col gap-6"
