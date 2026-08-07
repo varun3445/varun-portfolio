@@ -60,7 +60,7 @@ export function Process() {
             How I Work
           </h3>
 
-          <motion.div style={{ x }} className="flex gap-8 px-6 md:px-0">
+          <motion.div style={{ x }} className="flex items-start gap-8 px-6 md:px-0">
             {STEPS.map((step) => (
               <div
                 key={step.number}

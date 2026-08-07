@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useEffect, useRef, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 
 type CursorVariant = "default" | "work" | "cta";
@@ -35,16 +35,12 @@ export function CustomCursorProvider({ children }: { children: React.ReactNode }
   const mouseY = useMotionValue(-100);
   const springX = useSpring(mouseX, { stiffness: 500, damping: 40, mass: 1 });
   const springY = useSpring(mouseY, { stiffness: 500, damping: 40, mass: 1 });
-  const isTouch = useRef(false);
 
   useEffect(() => {
-    isTouch.current = window.matchMedia("(pointer: coarse)").matches;
-    if (isTouch.current) return;
-
     const move = (e: MouseEvent) => {
       mouseX.set(e.clientX);
       mouseY.set(e.clientY);
-      if (!visible) setVisible(true);
+      setVisible(true);
     };
     const leave = () => setVisible(false);
 
@@ -54,31 +50,30 @@ export function CustomCursorProvider({ children }: { children: React.ReactNode }
       window.removeEventListener("mousemove", move);
       document.documentElement.removeEventListener("mouseleave", leave);
     };
-  }, [mouseX, mouseY, visible]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const style = VARIANT_STYLES[variant];
 
   return (
     <CursorContext.Provider value={{ setVariant }}>
       {children}
-      {!isTouch.current && (
-        <motion.div
-          aria-hidden
-          className={`pointer-events-none fixed left-0 top-0 z-[100] hidden -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full md:flex ${style.blend ? "mix-blend-difference" : ""} ${style.className}`}
-          style={{
-            x: springX,
-            y: springY,
-            width: style.size,
-            height: style.size,
-            opacity: visible ? 1 : 0,
-          }}
-          transition={{ type: "spring", stiffness: 500, damping: 60 }}
-        >
-          {style.label && (
-            <span className="text-lg font-semibold text-white">{style.label}</span>
-          )}
-        </motion.div>
-      )}
+      <motion.div
+        aria-hidden
+        className={`pointer-events-none fixed left-0 top-0 z-[100] hidden -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full md:flex ${style.blend ? "mix-blend-difference" : ""} ${style.className}`}
+        style={{
+          x: springX,
+          y: springY,
+          width: style.size,
+          height: style.size,
+          opacity: visible ? 1 : 0,
+        }}
+        transition={{ type: "spring", stiffness: 500, damping: 60 }}
+      >
+        {style.label && (
+          <span className="text-lg font-semibold text-white">{style.label}</span>
+        )}
+      </motion.div>
     </CursorContext.Provider>
   );
 }
