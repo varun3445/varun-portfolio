@@ -27,7 +27,7 @@ export function ProjectCard({
       onMouseLeave={() => setVariant("default")}
       className="group flex flex-col gap-6"
     >
-      <div className="relative aspect-[2.2/1] w-full overflow-hidden rounded-3xl bg-surface desktop-lg:aspect-[1.38/1]">
+      <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl bg-surface">
         <Image
           src={mainImage}
           alt={projectTitle}
