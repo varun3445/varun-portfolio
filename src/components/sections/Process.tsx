@@ -60,11 +60,11 @@ export function Process() {
             How I Work
           </h3>
 
-          <motion.div style={{ x }} className="flex items-start gap-8 px-6 md:px-0">
+          <motion.div style={{ x }} className="flex items-stretch gap-8 px-6 md:px-0">
             {STEPS.map((step) => (
               <div
                 key={step.number}
-                className="flex w-[320px] shrink-0 flex-col gap-4 rounded-[15px] border border-black p-8 md:w-[440px]"
+                className="flex h-[420px] w-[320px] shrink-0 flex-col gap-4 rounded-[15px] border border-black p-8 tablet:h-[480px] md:w-[440px]"
               >
                 <h4 className="text-[28px] font-medium tablet:text-[36px] desktop:text-[44px]">
                   {step.step}

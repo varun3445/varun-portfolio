@@ -18,19 +18,21 @@ export function SplineEmbed({ url, className }: { url: string; className?: strin
         src="https://unpkg.com/@splinetool/viewer@1.12.72/build/spline-viewer.js"
         strategy="afterInteractive"
       />
-      {/* Oversized + absolutely positioned so the bottom-right "Built with Spline"
-          watermark badge gets cropped outside the visible container, matching
-          how the original Framer embed crops it via a wider canvas. */}
+      {/* Oversized + centered so the composition stays centered while the
+          bottom-right "Built with Spline" watermark badge (anchored to the
+          scaled host's own corner) gets pushed outside the visible crop,
+          matching how the original Framer embed hides it. */}
       {/* @ts-expect-error custom element */}
       <spline-viewer
         url={url}
         style={{
           display: "block",
           position: "absolute",
-          top: 0,
-          left: 0,
-          width: "115%",
-          height: "115%",
+          top: "50%",
+          left: "50%",
+          width: "118%",
+          height: "130%",
+          transform: "translate(-50%, -50%)",
         }}
       />
     </div>
