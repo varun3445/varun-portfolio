@@ -45,22 +45,24 @@ export function Process() {
   const x = useTransform(scrollYProgress, [0, 1], ["2%", "-72%"]);
 
   return (
-    <section className="w-full bg-white px-6 md:px-10">
-      <div className="mx-auto max-w-6xl">
+    <section className="w-full bg-white px-[15px] pb-[30px] tablet:px-[30px] tablet:pb-[50px] desktop:px-[40px] desktop:pb-[60px]">
+      <div className="w-full">
         <div className="h-px w-full bg-black" />
       </div>
 
       <div ref={wrapperRef} className="relative h-[300vh]">
-        <div className="sticky top-16 mx-auto flex max-w-6xl flex-col gap-10 overflow-hidden py-14">
-          <div className="flex items-center gap-2 px-6 md:px-0">
+        <div className="sticky top-16 flex w-full flex-col gap-[30px] overflow-hidden py-14 tablet:gap-[50px] desktop:gap-[60px]">
+          <div className="flex items-center gap-2">
             <span className="h-2.5 w-2.5 rounded-full bg-black" />
-            <h2 className="text-sm font-medium uppercase tracking-wide">Process</h2>
+            <h2 className="text-[16px] font-medium uppercase tracking-wide desktop:text-[18px]">
+              Process
+            </h2>
           </div>
-          <h3 className="px-6 font-clash text-3xl font-medium uppercase md:px-0 md:text-5xl">
+          <h3 className="text-[36px] font-medium capitalize leading-[1.1] tablet:text-[68px] desktop:text-[84px] desktop-lg:text-[96px]">
             How I Work
           </h3>
 
-          <motion.div style={{ x }} className="flex items-stretch gap-8 px-6 md:px-0">
+          <motion.div style={{ x }} className="flex items-stretch gap-8">
             {STEPS.map((step) => (
               <div
                 key={step.number}

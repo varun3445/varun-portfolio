@@ -3,15 +3,18 @@ import { Reveal } from "@/components/Reveal";
 
 export function CtaFooter() {
   return (
-    <section id="footer" className="w-full bg-white px-6 pt-20 md:px-10">
-      <div className="mx-auto flex max-w-6xl flex-col">
+    <section
+      id="footer"
+      className="w-full bg-white px-[15px] pt-[60px] tablet:px-[30px] tablet:pt-[80px] desktop:px-[40px] desktop:pt-[80px]"
+    >
+      <div className="flex w-full flex-col">
         <div className="h-px w-full bg-black" />
 
         <Reveal className="flex flex-col items-center gap-10 py-24 text-center">
-          <p className="text-sm font-medium uppercase tracking-wide text-gray-2">
+          <p className="text-[18px] font-medium uppercase tracking-wide text-gray-2 desktop:text-[20px] desktop-lg:text-[22px]">
             Have a project in mind?
           </p>
-          <h2 className="text-5xl font-medium uppercase leading-[1.2] tablet:text-7xl desktop:text-8xl desktop-lg:text-[118px]">
+          <h2 className="text-[48px] font-medium uppercase leading-[1.2] tablet:text-[64px] desktop:text-[98px] desktop-lg:text-[118px]">
             Let&apos;s Work Together
           </h2>
           <Button

@@ -69,7 +69,9 @@ function TimelineCard({
         <span className="text-sm text-gray-2">{timeline}</span>
       </div>
       <div className="flex flex-col gap-1">
-        <h4 className="font-clash text-3xl font-medium md:text-4xl">{companyName}</h4>
+        <h4 className="text-[32px] font-medium tablet:text-[36px] desktop:text-[40px] desktop-lg:text-[44px]">
+          {companyName}
+        </h4>
         <p className="text-base text-gray-2">{position}</p>
       </div>
       {description && (
@@ -82,47 +84,49 @@ function TimelineCard({
 
 export function Timeline() {
   return (
-    <section className="w-full bg-white px-6 py-24 md:px-10">
-      <div className="mx-auto flex max-w-6xl flex-col gap-20">
-        <div className="flex flex-col gap-8">
-          <div className="h-px w-full bg-black" />
-          <div className="flex flex-col gap-2">
-            <div className="flex items-center gap-2">
-              <span className="h-2.5 w-2.5 rounded-full bg-black" />
-              <h2 className="text-sm font-medium uppercase tracking-wide">Excperience</h2>
-            </div>
-            <h3 className="font-clash text-3xl font-medium uppercase md:text-5xl">
-              My Journey
-            </h3>
+    <section className="flex w-full flex-col gap-[30px] bg-white px-[15px] py-[60px] tablet:gap-[50px] tablet:px-[30px] tablet:py-[50px] desktop:gap-[60px] desktop:px-[40px] desktop:py-[60px]">
+      <div className="flex flex-col gap-8">
+        <div className="h-px w-full bg-black" />
+        <div className="flex flex-col gap-2">
+          <div className="flex items-center gap-2">
+            <span className="h-2.5 w-2.5 rounded-full bg-black" />
+            <h2 className="text-[16px] font-medium uppercase tracking-wide desktop:text-[18px]">
+              Excperience
+            </h2>
           </div>
-          <Reveal>
-            <div className="flex flex-col">
-              {EXPERIENCE.map((item) => (
-                <TimelineCard key={item.companyName} {...item} />
-              ))}
-            </div>
-          </Reveal>
+          <h3 className="text-[36px] font-medium capitalize leading-[1.1] tablet:text-[68px] desktop:text-[84px] desktop-lg:text-[96px]">
+            My Journey
+          </h3>
         </div>
+        <Reveal>
+          <div className="flex flex-col">
+            {EXPERIENCE.map((item) => (
+              <TimelineCard key={item.companyName} {...item} />
+            ))}
+          </div>
+        </Reveal>
+      </div>
 
-        <div className="flex flex-col gap-8">
-          <div className="h-px w-full bg-black" />
-          <div className="flex flex-col gap-2">
-            <div className="flex items-center gap-2">
-              <span className="h-2.5 w-2.5 rounded-full bg-black" />
-              <h2 className="text-sm font-medium uppercase tracking-wide">Education</h2>
-            </div>
-            <h3 className="font-clash text-3xl font-medium uppercase md:text-5xl">
-              Where I Studied
-            </h3>
+      <div className="flex flex-col gap-8">
+        <div className="h-px w-full bg-black" />
+        <div className="flex flex-col gap-2">
+          <div className="flex items-center gap-2">
+            <span className="h-2.5 w-2.5 rounded-full bg-black" />
+            <h2 className="text-[16px] font-medium uppercase tracking-wide desktop:text-[18px]">
+              Education
+            </h2>
           </div>
-          <Reveal>
-            <div className="flex flex-col">
-              {EDUCATION.map((item) => (
-                <TimelineCard key={item.companyName} {...item} />
-              ))}
-            </div>
-          </Reveal>
+          <h3 className="text-[36px] font-medium capitalize leading-[1.1] tablet:text-[68px] desktop:text-[84px] desktop-lg:text-[96px]">
+            Where I Studied
+          </h3>
         </div>
+        <Reveal>
+          <div className="flex flex-col">
+            {EDUCATION.map((item) => (
+              <TimelineCard key={item.companyName} {...item} />
+            ))}
+          </div>
+        </Reveal>
       </div>
     </section>
   );

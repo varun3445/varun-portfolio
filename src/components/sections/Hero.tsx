@@ -4,13 +4,13 @@ import { motion } from "framer-motion";
 
 export function Hero() {
   return (
-    <section className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-white px-6 pb-16 pt-40 md:px-10">
-      <div className="mx-auto w-full max-w-6xl">
+    <section className="relative flex w-full flex-col items-center justify-center overflow-hidden bg-white px-[15px] pb-[30px] pt-[120px] tablet:px-[30px] tablet:pb-[50px] tablet:pt-[120px] desktop:px-[40px] desktop:pb-[60px] desktop:pt-[160px]" style={{ minHeight: "100vh" }}>
+      <div className="w-full">
         <motion.h1
           initial={{ opacity: 0, y: 150 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ type: "spring", stiffness: 350, damping: 60, delay: 0.2 }}
-          className="font-clash text-4xl font-medium capitalize leading-[1.1] tracking-tight md:text-6xl lg:text-7xl"
+          className="font-clash text-[40px] font-medium capitalize leading-[1.1] tablet:text-[52px] desktop:text-[72px]"
         >
           <span className="text-gray-1">I am Varun, </span>
           <span className="text-black">
