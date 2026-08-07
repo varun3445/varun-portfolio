@@ -11,7 +11,7 @@ export function AboutMe() {
   return (
     <section
       id="about"
-      className="flex w-full flex-col gap-[30px] bg-white px-[15px] pb-[40px] tablet:gap-[50px] tablet:px-[30px] tablet:pb-[50px] desktop:gap-[60px] desktop:px-[40px] desktop:pb-[96px]"
+      className="flex w-full scroll-mt-[110px] flex-col gap-[30px] bg-white px-[15px] pb-[40px] tablet:gap-[50px] tablet:px-[30px] tablet:pb-[50px] desktop:gap-[60px] desktop:px-[40px] desktop:pb-[96px]"
     >
       <motion.div
         className="h-px w-full bg-black"
