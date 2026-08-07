@@ -84,6 +84,13 @@ function TimelineCard({
   );
 }
 
+type TimelineItem = {
+  companyName: string;
+  position: string;
+  timeline: string;
+  description?: string;
+};
+
 function TimelineGroup({
   label,
   title,
@@ -91,7 +98,7 @@ function TimelineGroup({
 }: {
   label: string;
   title: string;
-  items: typeof EXPERIENCE;
+  items: TimelineItem[];
 }) {
   return (
     <div className="flex flex-col gap-8">
