@@ -212,7 +212,7 @@ export function CaseStudyBlocks({ blocks }: { blocks: CaseStudyBlock[] }) {
                 >
                   <Image src={block.image} alt="" fill sizes="(min-width: 1200px) 560px, 100vw" className="object-cover" />
                 </div>
-                <div className="grid flex-1 grid-cols-2 gap-x-6 gap-y-8">
+                <div className="flex flex-1 flex-col gap-8">
                   {block.items.map((item) => (
                     <ColumnItem key={item.label} item={item} />
                   ))}
