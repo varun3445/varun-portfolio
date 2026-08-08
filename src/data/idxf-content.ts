@@ -145,7 +145,7 @@ export const idxfBlocks: CaseStudyBlock[] = [
     type: "paragraph",
     text: "Our “Ugly Duckling” stage was dedicated to ensuring that the UX of our app **aligns with the users'** needs in terms of **usability and functionality**. Here are some of the wireframes:",
   },
-  { type: "image", src: "/images/SHr1TVDgVm2TYaZKW4oOkF55g.png", aspect: 4200 / 11780 },
+  { type: "image", src: "/images/SHr1TVDgVm2TYaZKW4oOkF55g.png", aspect: 4200 / 11780, marginBottom: -8 },
 
   { type: "heading", text: "Major Improvements + Design Decisions" },
   {

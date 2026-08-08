@@ -7,7 +7,7 @@ export type CaseStudyBlock =
   | { type: "paragraph"; text: string; large?: boolean }
   | { type: "note"; text: string }
   | { type: "list"; items: string[] }
-  | { type: "image"; src: string; aspect: number; widthPct?: number }
+  | { type: "image"; src: string; aspect: number; widthPct?: number; marginBottom?: number }
   | { type: "imageRow"; images: { src: string; aspect: number }[] }
   | { type: "columns"; items: CaseStudyColumn[] }
   | {
@@ -136,8 +136,14 @@ export function CaseStudyBlocks({ blocks }: { blocks: CaseStudyBlock[] }) {
             return (
               <div
                 key={i}
-                className="relative my-4 overflow-hidden rounded-[15px]"
-                style={{ aspectRatio: block.aspect, width: `${block.widthPct ?? 100}%`, marginLeft: "auto", marginRight: "auto" }}
+                className="relative mt-4 overflow-hidden rounded-[15px]"
+                style={{
+                  aspectRatio: block.aspect,
+                  width: `${block.widthPct ?? 100}%`,
+                  marginLeft: "auto",
+                  marginRight: "auto",
+                  marginBottom: block.marginBottom ?? 16,
+                }}
               >
                 <Image
                   src={block.src}
