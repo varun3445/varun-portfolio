@@ -1,27 +1,96 @@
 import Image from "next/image";
 
+export type CaseStudyColumn = { label: string; text?: string; bullets?: string[] };
+
 export type CaseStudyBlock =
   | { type: "heading"; text: string }
-  | { type: "paragraph"; text: string }
-  | { type: "list"; items: string[] }
-  | { type: "image"; src: string; alt?: string }
+  | { type: "paragraph"; text: string; large?: boolean }
   | { type: "note"; text: string }
-  | { type: "meta"; items: { label: string; value: string | string[] }[] };
+  | { type: "list"; items: string[] }
+  | { type: "image"; src: string; height?: number }
+  | { type: "imageRow"; images: string[] }
+  | { type: "columns"; items: CaseStudyColumn[] }
+  | { type: "imageText"; image: string; label?: string; text?: string; bullets?: string[]; imageFirst?: boolean };
+
+function SectionHeading({ text }: { text: string }) {
+  return (
+    <div className="flex items-center gap-2">
+      <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-black" />
+      <h3 className="text-[20px] font-medium tablet:text-[24px] desktop:text-[32px] desktop-lg:text-[24px]">
+        {text}
+      </h3>
+    </div>
+  );
+}
+
+export function Rich({ text }: { text: string }) {
+  const parts = text.split(/(\*\*[^*]+\*\*)/g);
+  return (
+    <>
+      {parts.map((part, i) =>
+        part.startsWith("**") && part.endsWith("**") ? (
+          <strong key={i} className="font-semibold text-black">
+            {part.slice(2, -2)}
+          </strong>
+        ) : (
+          <span key={i}>{part}</span>
+        ),
+      )}
+    </>
+  );
+}
+
+function ColumnItem({ item }: { item: CaseStudyColumn }) {
+  return (
+    <div className="flex min-w-0 flex-col gap-2.5">
+      <p className="break-words text-[18px] tablet:text-[20px] desktop:text-[23px] desktop-lg:text-[25px]">
+        {item.label}
+      </p>
+      {item.text && (
+        <p className="text-[12px] leading-relaxed text-gray-2 tablet:text-[18px] desktop:text-[20px] desktop-lg:text-[22px]">
+          <Rich text={item.text} />
+        </p>
+      )}
+      {item.bullets && (
+        <ul className="flex flex-col gap-1 pl-4">
+          {item.bullets.map((b) => (
+            <li key={b} className="list-disc text-[12px] leading-relaxed text-gray-2 tablet:text-[18px] desktop:text-[20px] desktop-lg:text-[22px]">
+              <Rich text={b} />
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+}
 
 export function CaseStudyBlocks({ blocks }: { blocks: CaseStudyBlock[] }) {
   return (
-    <div className="mx-auto flex max-w-3xl flex-col gap-6">
+    <div className="flex flex-col">
       {blocks.map((block, i) => {
         switch (block.type) {
           case "heading":
             return (
-              <h3 key={i} className="mt-6 font-clash text-2xl font-medium md:text-3xl">
-                {block.text}
-              </h3>
+              <div key={i} className="py-[30px] first:pt-0">
+                <SectionHeading text={block.text} />
+              </div>
             );
           case "paragraph":
             return (
-              <p key={i} className="text-base leading-relaxed text-gray-2">
+              <p
+                key={i}
+                className={
+                  block.large
+                    ? "text-[18px] leading-relaxed tablet:text-[20px] desktop:text-[23px] desktop-lg:text-[25px]"
+                    : "text-[12px] leading-relaxed tablet:text-[18px] desktop:text-[20px] desktop-lg:text-[22px]"
+                }
+              >
+                <Rich text={block.text} />
+              </p>
+            );
+          case "note":
+            return (
+              <p key={i} className="text-[12px] text-gray-1 tablet:text-[16px] desktop:text-[16px] desktop-lg:text-[18px]">
                 {block.text}
               </p>
             );
@@ -29,51 +98,91 @@ export function CaseStudyBlocks({ blocks }: { blocks: CaseStudyBlock[] }) {
             return (
               <ul key={i} className="flex flex-col gap-2 pl-5">
                 {block.items.map((item) => (
-                  <li key={item} className="list-disc text-base leading-relaxed text-gray-2">
-                    {item}
+                  <li
+                    key={item}
+                    className="list-disc text-[12px] leading-relaxed text-gray-2 tablet:text-[18px] desktop:text-[20px] desktop-lg:text-[22px]"
+                  >
+                    <Rich text={item} />
                   </li>
                 ))}
               </ul>
             );
-          case "note":
+          case "columns": {
+            const cols = Math.min(block.items.length, 4);
+            const gridClass =
+              cols >= 4
+                ? "grid-cols-2 tablet:grid-cols-4"
+                : cols === 3
+                  ? "grid-cols-2 tablet:grid-cols-3"
+                  : "grid-cols-2";
             return (
-              <p key={i} className="text-sm italic text-gray-1">
-                {block.text}
-              </p>
+              <div key={i} className={`grid ${gridClass} gap-x-6 gap-y-8 py-[30px] first:pt-0`}>
+                {block.items.map((item) => (
+                  <ColumnItem key={item.label} item={item} />
+                ))}
+              </div>
             );
-          case "meta":
+          }
+          case "image":
             return (
-              <div key={i} className="grid grid-cols-2 gap-6 rounded-3xl bg-surface p-8 md:grid-cols-4">
-                {block.items.map((m) => (
-                  <div key={m.label} className="flex flex-col gap-2">
-                    <span className="text-xs font-medium uppercase tracking-wide text-gray-1">
-                      {m.label}
-                    </span>
-                    {Array.isArray(m.value) ? (
-                      <div className="flex flex-col gap-1">
-                        {m.value.map((v) => (
-                          <span key={v} className="text-sm">
-                            {v}
-                          </span>
-                        ))}
-                      </div>
-                    ) : (
-                      <span className="text-sm">{m.value}</span>
-                    )}
+              <div
+                key={i}
+                className="relative my-4 w-full overflow-hidden rounded-[15px] bg-surface"
+                style={{ height: block.height ?? 500, aspectRatio: block.height ? undefined : "16/9" }}
+              >
+                <Image
+                  src={block.src}
+                  alt=""
+                  fill
+                  sizes="(min-width: 1200px) 1120px, 100vw"
+                  className="object-cover"
+                />
+              </div>
+            );
+          case "imageRow":
+            return (
+              <div key={i} className="my-4 flex flex-col gap-5 tablet:flex-row">
+                {block.images.map((src) => (
+                  <div
+                    key={src}
+                    className="relative h-[300px] w-full overflow-hidden rounded-[15px] bg-surface tablet:h-[400px]"
+                  >
+                    <Image src={src} alt="" fill sizes="(min-width: 1200px) 560px, 100vw" className="object-cover" />
                   </div>
                 ))}
               </div>
             );
-          case "image":
+          case "imageText":
             return (
-              <div key={i} className="relative my-4 aspect-video w-full overflow-hidden rounded-3xl bg-surface">
-                <Image
-                  src={block.src}
-                  alt={block.alt ?? ""}
-                  fill
-                  sizes="(min-width: 768px) 768px, 100vw"
-                  className="object-cover"
-                />
+              <div
+                key={i}
+                className={`flex flex-col gap-6 py-[30px] first:pt-0 tablet:gap-8 desktop:flex-row desktop:items-center ${
+                  block.imageFirst ? "" : "desktop:flex-row-reverse"
+                }`}
+              >
+                <div className="relative h-[280px] w-full shrink-0 overflow-hidden rounded-[15px] bg-surface desktop:h-[380px] desktop:w-1/2">
+                  <Image src={block.image} alt="" fill sizes="(min-width: 1200px) 560px, 100vw" className="object-cover" />
+                </div>
+                <div className="flex flex-1 flex-col gap-4">
+                  {block.label && <p className="text-[14px] font-medium desktop:text-[16px]">{block.label}</p>}
+                  {block.text && (
+                    <p className="text-[12px] leading-relaxed text-gray-2 tablet:text-[18px] desktop:text-[20px] desktop-lg:text-[22px]">
+                      <Rich text={block.text} />
+                    </p>
+                  )}
+                  {block.bullets && (
+                    <ul className="flex flex-col gap-1 pl-4">
+                      {block.bullets.map((b) => (
+                        <li
+                          key={b}
+                          className="list-disc text-[12px] leading-relaxed text-gray-2 tablet:text-[18px] desktop:text-[20px] desktop-lg:text-[22px]"
+                        >
+                          <Rich text={b} />
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
               </div>
             );
           default:
