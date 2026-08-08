@@ -57,7 +57,7 @@ export function Process() {
   const x = useTransform(scrollYProgress, [0, 1], [0, endX]);
 
   return (
-    <section className="w-full bg-white px-[15px] pb-[30px] tablet:px-[30px] tablet:pb-[50px] desktop:px-[40px] desktop:pb-[60px]">
+    <section className="w-full bg-white px-[15px] pb-[30px] tablet:px-[30px] tablet:pb-[50px] desktop:px-[64px] desktop:pb-[60px]">
       <div className="w-full">
         <div className="h-px w-full bg-black" />
       </div>

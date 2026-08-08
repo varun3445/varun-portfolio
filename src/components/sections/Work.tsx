@@ -6,7 +6,7 @@ export function Work() {
   return (
     <section
       id="work"
-      className="flex w-full flex-col gap-[30px] bg-white px-[15px] py-[40px] tablet:gap-[50px] tablet:px-[30px] tablet:py-[40px] desktop:gap-[60px] desktop:px-[40px] desktop:py-[40px]"
+      className="flex w-full flex-col gap-[30px] bg-white px-[15px] py-[40px] tablet:gap-[50px] tablet:px-[30px] tablet:py-[40px] desktop:gap-[60px] desktop:px-[64px] desktop:py-[40px]"
     >
       <div className="flex flex-col gap-2">
         <div className="flex items-center gap-2">

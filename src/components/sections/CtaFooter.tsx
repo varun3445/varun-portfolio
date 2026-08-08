@@ -10,7 +10,7 @@ export function CtaFooter() {
   return (
     <section
       id="footer"
-      className="w-full bg-white px-[15px] pt-[60px] tablet:px-[30px] tablet:pt-[80px] desktop:px-[40px] desktop:pt-[80px]"
+      className="w-full bg-white px-[15px] pt-[60px] tablet:px-[30px] tablet:pt-[80px] desktop:px-[64px] desktop:pt-[80px]"
     >
       <div className="flex w-full flex-col">
         <div className="h-px w-full bg-black" />
