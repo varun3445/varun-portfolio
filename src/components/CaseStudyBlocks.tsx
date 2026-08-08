@@ -143,7 +143,7 @@ export function CaseStudyBlocks({ blocks }: { blocks: CaseStudyBlock[] }) {
                   alt=""
                   fill
                   sizes="(min-width: 1200px) 1120px, 100vw"
-                  className="object-contain"
+                  className="object-cover"
                 />
               </div>
             );
@@ -156,7 +156,7 @@ export function CaseStudyBlocks({ blocks }: { blocks: CaseStudyBlock[] }) {
                     className="relative w-full overflow-hidden rounded-[15px] bg-surface"
                     style={{ aspectRatio: img.aspect }}
                   >
-                    <Image src={img.src} alt="" fill sizes="(min-width: 1200px) 560px, 100vw" className="object-contain" />
+                    <Image src={img.src} alt="" fill sizes="(min-width: 1200px) 560px, 100vw" className="object-cover" />
                   </div>
                 ))}
               </div>
@@ -173,7 +173,7 @@ export function CaseStudyBlocks({ blocks }: { blocks: CaseStudyBlock[] }) {
                   className="relative w-full shrink-0 overflow-hidden rounded-[15px] bg-surface desktop:w-1/2"
                   style={{ aspectRatio: block.aspect }}
                 >
-                  <Image src={block.image} alt="" fill sizes="(min-width: 1200px) 560px, 100vw" className="object-contain" />
+                  <Image src={block.image} alt="" fill sizes="(min-width: 1200px) 560px, 100vw" className="object-cover" />
                 </div>
                 <div className="flex flex-1 flex-col gap-4">
                   {block.label && <p className="text-[14px] font-medium desktop:text-[16px]">{block.label}</p>}
