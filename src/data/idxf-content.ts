@@ -204,11 +204,14 @@ export const idxfBlocks: CaseStudyBlock[] = [
   { type: "image", src: "/images/VS6nQtENZfHzAX1S6azVYQNQ0.png", aspect: 3996 / 4978 },
 
   { type: "heading", text: "UI for Launch" },
-  { type: "image", src: "/images/eV0jR6oDGXZYQtvGzLkzfarOHI.png", aspect: 3392 / 5424 },
+  { type: "image", src: "/images/eV0jR6oDGXZYQtvGzLkzfarOHI.png", aspect: 3392 / 5424, widthPct: 64 },
 
   { type: "heading", text: "Post Designs Outcome" },
   {
-    type: "columns",
+    type: "imageColumns",
+    image: "/images/SgotnR3tJfqnsSdvjpB56843C4s.png",
+    aspect: 675 / 500,
+    imageFirst: false,
     items: [
       {
         label: "Market Validation",
@@ -244,6 +247,5 @@ export const idxfBlocks: CaseStudyBlock[] = [
       },
     ],
   },
-  { type: "image", src: "/images/SgotnR3tJfqnsSdvjpB56843C4s.png", aspect: 1616 / 1776 },
-  { type: "image", src: "/images/1IsBewAuoSpXqAP0beZnju8k6Ng.png", aspect: 4184 / 1308 },
+  { type: "image", src: "/images/1IsBewAuoSpXqAP0beZnju8k6Ng.png", aspect: 1360 / 500 },
 ];

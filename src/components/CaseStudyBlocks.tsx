@@ -18,7 +18,8 @@ export type CaseStudyBlock =
       text?: string;
       bullets?: string[];
       imageFirst?: boolean;
-    };
+    }
+  | { type: "imageColumns"; image: string; aspect: number; items: CaseStudyColumn[]; imageFirst?: boolean };
 
 function SectionHeading({ text }: { text: string }) {
   return (
@@ -194,6 +195,27 @@ export function CaseStudyBlocks({ blocks }: { blocks: CaseStudyBlock[] }) {
                       ))}
                     </ul>
                   )}
+                </div>
+              </div>
+            );
+          case "imageColumns":
+            return (
+              <div
+                key={i}
+                className={`flex flex-col gap-8 py-[30px] first:pt-0 desktop:items-start desktop:gap-10 ${
+                  block.imageFirst ? "desktop:flex-row" : "desktop:flex-row-reverse"
+                }`}
+              >
+                <div
+                  className="relative w-full shrink-0 overflow-hidden rounded-[15px] desktop:w-1/2"
+                  style={{ aspectRatio: block.aspect }}
+                >
+                  <Image src={block.image} alt="" fill sizes="(min-width: 1200px) 560px, 100vw" className="object-cover" />
+                </div>
+                <div className="grid flex-1 grid-cols-2 gap-x-6 gap-y-8">
+                  {block.items.map((item) => (
+                    <ColumnItem key={item.label} item={item} />
+                  ))}
                 </div>
               </div>
             );
