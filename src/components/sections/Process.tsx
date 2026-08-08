@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 const STEPS = [
@@ -38,11 +38,23 @@ const STEPS = [
 
 export function Process() {
   const wrapperRef = useRef<HTMLDivElement>(null);
+  const lastCardRef = useRef<HTMLDivElement>(null);
+  const [endX, setEndX] = useState(0);
+
+  useEffect(() => {
+    const measure = () => {
+      if (lastCardRef.current) setEndX(-lastCardRef.current.offsetLeft);
+    };
+    measure();
+    window.addEventListener("resize", measure);
+    return () => window.removeEventListener("resize", measure);
+  }, []);
+
   const { scrollYProgress } = useScroll({
     target: wrapperRef,
     offset: ["start start", "end end"],
   });
-  const x = useTransform(scrollYProgress, [0, 1], ["2%", "-72%"]);
+  const x = useTransform(scrollYProgress, [0, 1], [0, endX]);
 
   return (
     <section className="w-full bg-white px-[15px] pb-[30px] tablet:px-[30px] tablet:pb-[50px] desktop:px-[40px] desktop:pb-[60px]">
@@ -62,10 +74,11 @@ export function Process() {
             How I Work
           </h3>
 
-          <motion.div style={{ x }} className="flex items-stretch gap-8">
-            {STEPS.map((step) => (
+          <motion.div style={{ x }} className="relative flex items-stretch gap-8">
+            {STEPS.map((step, i) => (
               <div
                 key={step.number}
+                ref={i === STEPS.length - 1 ? lastCardRef : undefined}
                 className="flex h-[420px] w-[320px] shrink-0 flex-col gap-4 rounded-[15px] border border-black p-8 tablet:h-[480px] md:w-[440px]"
               >
                 <div className="flex min-h-[68px] items-start tablet:min-h-[88px] desktop:min-h-[108px]">

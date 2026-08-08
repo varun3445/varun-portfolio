@@ -58,7 +58,7 @@ export function AboutMe() {
         />
       </motion.div>
 
-      <div className="flex flex-col gap-6 desktop:flex-row desktop:items-start desktop:gap-[30px]">
+      <div className="flex flex-col gap-6 desktop:flex-row desktop:items-start desktop:justify-between">
         <div className="flex items-center gap-2">
           <span className="h-2.5 w-2.5 rounded-full bg-black" />
           <h2 className="text-[16px] font-medium uppercase tracking-wide desktop:text-[18px]">
