@@ -39,7 +39,7 @@ export function Navbar() {
       transition={{ type: "spring", stiffness: 400, damping: 30 }}
       className="fixed inset-x-0 top-0 z-50 bg-white"
     >
-      <div className="relative mx-auto flex max-w-[1280px] items-center justify-between px-[15px] py-6 tablet:px-[30px] desktop:px-[50px]">
+      <div className="relative mx-auto flex max-w-[1280px] items-center justify-between px-[15px] py-6 tablet:px-[30px]">
         <Logo size={45} />
 
         <div className="hidden items-center gap-1 md:flex">

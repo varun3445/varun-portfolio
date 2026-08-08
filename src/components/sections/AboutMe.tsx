@@ -46,7 +46,7 @@ export function AboutMe() {
       </div>
 
       <motion.div
-        className="relative -mx-[15px] h-[70vh] w-[calc(100%+30px)] overflow-hidden bg-black tablet:-mx-[30px] tablet:w-[calc(100%+60px)] desktop:-mx-[40px] desktop:h-screen desktop:w-[calc(100%+80px)]"
+        className="relative -mx-[15px] h-[70vh] w-[calc(100%+30px)] overflow-hidden bg-black tablet:-mx-[30px] tablet:w-[calc(100%+60px)] desktop:-mx-[64px] desktop:h-screen desktop:w-[calc(100%+128px)]"
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={viewport}
