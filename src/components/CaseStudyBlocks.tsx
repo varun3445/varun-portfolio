@@ -7,7 +7,7 @@ export type CaseStudyBlock =
   | { type: "paragraph"; text: string; large?: boolean }
   | { type: "note"; text: string }
   | { type: "list"; items: string[] }
-  | { type: "image"; src: string; aspect: number }
+  | { type: "image"; src: string; aspect: number; widthPct?: number }
   | { type: "imageRow"; images: { src: string; aspect: number }[] }
   | { type: "columns"; items: CaseStudyColumn[] }
   | {
@@ -135,8 +135,8 @@ export function CaseStudyBlocks({ blocks }: { blocks: CaseStudyBlock[] }) {
             return (
               <div
                 key={i}
-                className="relative my-4 w-full overflow-hidden rounded-[15px] bg-surface"
-                style={{ aspectRatio: block.aspect }}
+                className="relative my-4 overflow-hidden rounded-[15px]"
+                style={{ aspectRatio: block.aspect, width: `${block.widthPct ?? 100}%`, marginLeft: "auto", marginRight: "auto" }}
               >
                 <Image
                   src={block.src}
@@ -153,7 +153,7 @@ export function CaseStudyBlocks({ blocks }: { blocks: CaseStudyBlock[] }) {
                 {block.images.map((img) => (
                   <div
                     key={img.src}
-                    className="relative w-full overflow-hidden rounded-[15px] bg-surface"
+                    className="relative w-full overflow-hidden rounded-[15px]"
                     style={{ aspectRatio: img.aspect }}
                   >
                     <Image src={img.src} alt="" fill sizes="(min-width: 1200px) 560px, 100vw" className="object-cover" />
@@ -170,7 +170,7 @@ export function CaseStudyBlocks({ blocks }: { blocks: CaseStudyBlock[] }) {
                 }`}
               >
                 <div
-                  className="relative w-full shrink-0 overflow-hidden rounded-[15px] bg-surface desktop:w-1/2"
+                  className="relative w-full shrink-0 overflow-hidden rounded-[15px] desktop:w-1/2"
                   style={{ aspectRatio: block.aspect }}
                 >
                   <Image src={block.image} alt="" fill sizes="(min-width: 1200px) 560px, 100vw" className="object-cover" />

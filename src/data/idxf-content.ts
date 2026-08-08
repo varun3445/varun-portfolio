@@ -121,7 +121,7 @@ export const idxfBlocks: CaseStudyBlock[] = [
     type: "paragraph",
     text: "With IDXF's AI-driven matchmaking and 'phygital' technology, creatives can transform isolated ideas into collaborative projects. This means that through the IDXF platform and its physical networking tools, creatives can find ideal partners, access structured ideation guidance, and manage their projects seamlessly. This process ultimately leads to the efficient launch of high-impact, tangible projects.",
   },
-  { type: "image", src: "/images/kuCLlKjcDd7iIiyCPhNLy6iBl3M.png", aspect: 4800 / 3051 },
+  { type: "image", src: "/images/kuCLlKjcDd7iIiyCPhNLy6iBl3M.png", aspect: 4800 / 3051, widthPct: 69 },
 
   { type: "heading", text: "Redesign Goals" },
   {
