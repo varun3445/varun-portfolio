@@ -249,3 +249,112 @@ export const idxfBlocks: CaseStudyBlock[] = [
   },
   { type: "image", src: "/images/1IsBewAuoSpXqAP0beZnju8k6Ng.png", aspect: 3929 / 1036, widthPct: 75 },
 ];
+
+// Trimmed template reused for case studies still being built: Executive Summary
+// (via the `summary` prop), Design Challenge, Vision, Process, Initial Problem
+// Discovery, then UI for Launch and Post Designs Outcome.
+export const idxfBlocksShort: CaseStudyBlock[] = [
+  { type: "heading", text: "Design Challenge And Responsibilities Overview" },
+  {
+    type: "columns",
+    items: [
+      {
+        label: "Challenge",
+        text: "The creative economy is fragmented, leading to creative isolation, inefficiency, and a struggle to launch new ideas.",
+      },
+      {
+        label: "Opportunity",
+        text: 'Create an "always-on" digital ecosystem that solves these problems by providing a flexible space for creatives to connect, collaborate, and co-create.',
+      },
+    ],
+  },
+  {
+    type: "columns",
+    items: [
+      { label: "Timeline", text: "9 Months" },
+      { label: "Disciplines", bullets: ["User Experience Design", "User Interface Design"] },
+      { label: "Responsibilities", bullets: ["UX Research", "UX/UI Mobile Design", "Prototyping", "Content"] },
+      { label: "Tools", bullets: ["Figma", "Replit"] },
+    ],
+  },
+
+  { type: "heading", text: "Our Vision" },
+  {
+    type: "paragraph",
+    text: "To provide some background on our vision, we believe the creative economy is evolving into a truly **collaborative ecosystem**. Through our platform, we aim to facilitate a future where creatives can accomplish several key objectives. These include **overcoming isolation and inefficiency, discovering new ideas and partners, managing projects** from concept to completion, and **cultivating genuine, team-based relationships** within a single, integrated platform.",
+  },
+
+  { type: "heading", text: "The Process" },
+  { type: "image", src: "/images/fuGEylkGK0InaMp6oYKlM7XCs8.png", aspect: 4318 / 1239 },
+
+  { type: "heading", text: "Initial Problem Discovery" },
+  {
+    type: "paragraph",
+    text: "The creative industry is a thriving **$124 billion economy** that is fragmented and isolating for many of its participants. While platforms like LinkedIn and Fiverr offer a space for visibility and transactional work, they often fail to foster the meaningful connections and long-term collaborations that are crucial for growth. This leaves a significant void for a true “third space” where creatives can **connect, co-create, and thrive together**.",
+  },
+  {
+    type: "paragraph",
+    text: "This disconnect is a significant barrier to success. Research indicates that over **50% of freelancers struggle to find local work opportunities**, and networking is often perceived as impersonal and transactional. Furthermore, a “pay-to-win” model on many platforms makes it difficult for emerging talent to gain visibility, leading to creative isolation and inefficiency.",
+  },
+  {
+    type: "paragraph",
+    text: "Our objective is to design a solution that bridges this gap. The goal is to create an always-on digital ecosystem that not only provides tools for ideation and project management but also empowers creatives to build a supportive community. By blending digital convenience with the power of **real-world human connection**, we aim to turn daily creative challenges into collaborative opportunities.",
+  },
+  {
+    type: "imageRow",
+    images: [
+      { src: "/images/JQkWdeQoQ34rC2hqO6UfefeZ2cg.png", aspect: 1968 / 1568 },
+      { src: "/images/5SfZ7EJp5F8wYdP0318vhNuRf0.png", aspect: 1968 / 1568 },
+    ],
+  },
+  {
+    type: "paragraph",
+    text: "So, the **core problem** is that the **creative economy** is **fragmented** and existing platforms are **transactional**, **failing** to provide a space for **meaningful**, **long-term collaboration**.",
+  },
+
+  { type: "heading", text: "UI for Launch" },
+  { type: "image", src: "/images/eV0jR6oDGXZYQtvGzLkzfarOHI.png", aspect: 3392 / 5424, widthPct: 64 },
+
+  { type: "heading", text: "Post Designs Outcome" },
+  {
+    type: "imageColumns",
+    image: "/images/SgotnR3tJfqnsSdvjpB56843C4s.png",
+    aspect: 675 / 500,
+    imageFirst: false,
+    items: [
+      {
+        label: "Market Validation",
+        bullets: [
+          "Initial social media outreach garnered over 42,000 views and 110+ supporters, confirming strong demand.",
+          "The final exhibit was highly effective for user acquisition.",
+          "Testing with RCA students provided valuable early feedback.",
+        ],
+      },
+      {
+        label: "Product Development",
+        bullets: [
+          "The platform's features, including AI matchmaking and NFC-enabled wearables, are validated by data-driven experiments.",
+          "The neobrutalistic design emphasises functionality over ornamentation.",
+          "The platform is built on four core sections: Explore, Search, Create, and Ideate.",
+        ],
+      },
+      {
+        label: "My Key Takeaways",
+        bullets: [
+          "Traditional platforms underperform, validating the need for a dedicated creative matching system.",
+          "User tests showed a need for structured guidance during ideation, leading to the inclusion of planning tools.",
+          "A colour-coded wearable system boosted user confidence.",
+        ],
+      },
+      {
+        label: "Next Steps",
+        bullets: [
+          "Further develop the app for real-time collaborations and mentorship.",
+          "Prototype the physical tag with enhanced NFC capabilities.",
+          "Conduct pilot tests in dedicated networking spaces to refine the user experience.",
+        ],
+      },
+    ],
+  },
+  { type: "image", src: "/images/1IsBewAuoSpXqAP0beZnju8k6Ng.png", aspect: 3929 / 1036, widthPct: 75 },
+];

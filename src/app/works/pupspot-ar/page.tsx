@@ -1,5 +1,5 @@
 import { CaseStudy } from "@/components/CaseStudy";
-import { idxfBlocks, idxfSummary } from "@/data/idxf-content";
+import { idxfBlocksShort, idxfSummary } from "@/data/idxf-content";
 
 export const metadata = { title: "Pupspot-AR — Varun Srivathsan" };
 
@@ -10,7 +10,7 @@ export default function PupspotArPage() {
       heroImage="/images/FTaIF6vN0dinKBMZ0o8rryptIwE.png"
       summary={idxfSummary}
       appLink="https://pupspot-ar.netlify.app"
-      blocks={idxfBlocks}
+      blocks={idxfBlocksShort}
     />
   );
 }

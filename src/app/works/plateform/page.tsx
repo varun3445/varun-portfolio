@@ -1,5 +1,5 @@
 import { CaseStudy } from "@/components/CaseStudy";
-import { idxfBlocks, idxfSummary } from "@/data/idxf-content";
+import { idxfBlocksShort, idxfSummary } from "@/data/idxf-content";
 
 export const metadata = { title: "Plateform — Varun Srivathsan" };
 
@@ -10,7 +10,7 @@ export default function PlateformPage() {
       heroImage="/images/1Fbz3ZMDBgHq9zCQAHR9wL6zV9U.png"
       summary={idxfSummary}
       appLink="https://plateform-hounslow.netlify.app"
-      blocks={idxfBlocks}
+      blocks={idxfBlocksShort}
     />
   );
 }
