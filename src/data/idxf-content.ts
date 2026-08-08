@@ -35,7 +35,7 @@ export const idxfBlocks: CaseStudyBlock[] = [
   },
 
   { type: "heading", text: "The Process" },
-  { type: "image", src: "/images/fuGEylkGK0InaMp6oYKlM7XCs8.png" },
+  { type: "image", src: "/images/fuGEylkGK0InaMp6oYKlM7XCs8.png", aspect: 4318 / 1239 },
 
   { type: "heading", text: "Initial Problem Discovery" },
   {
@@ -50,7 +50,13 @@ export const idxfBlocks: CaseStudyBlock[] = [
     type: "paragraph",
     text: "Our objective is to design a solution that bridges this gap. The goal is to create an always-on digital ecosystem that not only provides tools for ideation and project management but also empowers creatives to build a supportive community. By blending digital convenience with the power of **real-world human connection**, we aim to turn daily creative challenges into collaborative opportunities.",
   },
-  { type: "imageRow", images: ["/images/JQkWdeQoQ34rC2hqO6UfefeZ2cg.png", "/images/5SfZ7EJp5F8wYdP0318vhNuRf0.png"] },
+  {
+    type: "imageRow",
+    images: [
+      { src: "/images/JQkWdeQoQ34rC2hqO6UfefeZ2cg.png", aspect: 1968 / 1568 },
+      { src: "/images/5SfZ7EJp5F8wYdP0318vhNuRf0.png", aspect: 1968 / 1568 },
+    ],
+  },
   {
     type: "paragraph",
     text: "So, the **core problem** is that the **creative economy** is **fragmented** and existing platforms are **transactional**, **failing** to provide a space for **meaningful**, **long-term collaboration**.",
@@ -83,47 +89,39 @@ export const idxfBlocks: CaseStudyBlock[] = [
       },
     ],
   },
-  { type: "image", src: "/images/kJQy9RPHs2VpxzrO02ypS9QMcX8.png" },
+  { type: "image", src: "/images/kJQy9RPHs2VpxzrO02ypS9QMcX8.png", aspect: 3996 / 1364 },
 
   { type: "heading", text: "Competitor Analysis" },
   {
     type: "paragraph",
     text: "While **IDXF** is a unique platform, we analysed competitors to understand how they approach **creative collaboration**. Existing platforms focus on **portfolio visibility**, **professional networking**, and **transactional freelance services**. Our analysis shows that these models often fall short in fostering true **co-creation** and **community**, which validates the need for **IDXF's** unique, **integrated approach** to meet the **holistic needs** of creatives.",
   },
-  { type: "image", src: "/images/S0ATRs1YhkKOia9Mm01114qZE.png" },
-
-  { type: "heading", text: "Experimentation and testing" },
-  {
-    type: "paragraph",
-    text: "Although our platform, IDXF, is a novel concept, we first ran various experiments to understand the successes and failures of existing approaches. This allowed us to specifically design a platform that addresses the real needs of creatives.",
-  },
-  { type: "note", text: "*Note: IDXF - Idea Forge was initially called “Network X” during beta testing." },
-  { type: "image", src: "/images/wnQItOKaMpvTYs6z62TUMHLJV8.png" },
+  { type: "image", src: "/images/S0ATRs1YhkKOia9Mm01114qZE.png", aspect: 4800 / 984 },
 
   { type: "heading", text: "User Pain Points" },
   { type: "paragraph", text: "And after these 4 experiments with over 100 users, we can conclude that:" },
-  { type: "image", src: "/images/yZHO28T97k6tuBc4g9Z5oc6XltM.png" },
+  { type: "image", src: "/images/yZHO28T97k6tuBc4g9Z5oc6XltM.png", aspect: 4096 / 2536 },
 
   { type: "heading", text: "User Persona" },
   {
     type: "paragraph",
     text: "I wanted to create a user persona to **embody the ideal IDXF - Idea Forge** user based on the full research process I conducted, incorporating insights from the problem discovery, user surveys, competitor analysis, and major pain points. By synthesizing the gathered data, my aim is to **represent the user's preferences**, **pain points**, and **behaviours**, allowing for a more focused and effective redesign for our ideal user.",
   },
-  { type: "image", src: "/images/nrKGlDMPXDTn8vXfaxNYjdKs.png" },
+  { type: "image", src: "/images/nrKGlDMPXDTn8vXfaxNYjdKs.png", aspect: 4200 / 1488 },
 
   { type: "heading", text: "User Journey" },
   {
     type: "paragraph",
     text: "I created a user journey to **map out** how Carlos, our ideal IDXF user, would **navigate his current situation**, aiming to **understand the highs and lows of his emotions** while trying to meet with new people to collaborate with. This comprehensive visualisation provides valuable insights into Carlos’ experience, enabling a **targeted redesign** to optimize user engagement for and satisfaction.",
   },
-  { type: "image", src: "/images/il92vJUVhbOWUlDLAfalzyU6bhM.png" },
+  { type: "image", src: "/images/il92vJUVhbOWUlDLAfalzyU6bhM.png", aspect: 4074 / 2472 },
 
   { type: "heading", text: "Developing a Solution" },
   {
     type: "paragraph",
     text: "With IDXF's AI-driven matchmaking and 'phygital' technology, creatives can transform isolated ideas into collaborative projects. This means that through the IDXF platform and its physical networking tools, creatives can find ideal partners, access structured ideation guidance, and manage their projects seamlessly. This process ultimately leads to the efficient launch of high-impact, tangible projects.",
   },
-  { type: "image", src: "/images/kuCLlKjcDd7iIiyCPhNLy6iBl3M.png", height: 600 },
+  { type: "image", src: "/images/kuCLlKjcDd7iIiyCPhNLy6iBl3M.png", aspect: 4800 / 3051 },
 
   { type: "heading", text: "Redesign Goals" },
   {
@@ -142,12 +140,12 @@ export const idxfBlocks: CaseStudyBlock[] = [
     type: "paragraph",
     text: "Here are some of my **initial thought processes** regarding our research and the goals for our app. The user flows and user type mapping provided us with the **first glimpse** of how our app could potentially work, with all the key functionalities implemented.",
   },
-  { type: "image", src: "/images/0LQ30J1Q7lA25abUdnR9QJjx4r0.png" },
+  { type: "image", src: "/images/0LQ30J1Q7lA25abUdnR9QJjx4r0.png", aspect: 4072 / 3016 },
   {
     type: "paragraph",
     text: "Our “Ugly Duckling” stage was dedicated to ensuring that the UX of our app **aligns with the users'** needs in terms of **usability and functionality**. Here are some of the wireframes:",
   },
-  { type: "image", src: "/images/SHr1TVDgVm2TYaZKW4oOkF55g.png", height: 900 },
+  { type: "image", src: "/images/SHr1TVDgVm2TYaZKW4oOkF55g.png", aspect: 4200 / 13072 },
 
   { type: "heading", text: "Major Improvements + Design Decisions" },
   {
@@ -163,6 +161,7 @@ export const idxfBlocks: CaseStudyBlock[] = [
   {
     type: "imageText",
     image: "/images/IsYX9m8ZmWtcJspTmyb3ZpmCVJk.png",
+    aspect: 2456 / 2148,
     imageFirst: true,
     label: "The navigation system from IDXF’s explore page screens",
     bullets: [
@@ -177,7 +176,7 @@ export const idxfBlocks: CaseStudyBlock[] = [
     type: "paragraph",
     text: "The next major design decision was **deciding on the colour scheme**. After conducting colour theory research, we learned that the colour yellow represents **“warmth, optimism and energy”**, and we wanted to move towards that path. Another crucial aspect we had to consider was **designing for accessibility**.",
   },
-  { type: "image", src: "/images/czW0ELXLSroGFbhVuQfVWxEJEM.png" },
+  { type: "image", src: "/images/czW0ELXLSroGFbhVuQfVWxEJEM.png", aspect: 4004 / 968 },
 
   { type: "heading", text: "Rewards system" },
   {
@@ -187,6 +186,7 @@ export const idxfBlocks: CaseStudyBlock[] = [
   {
     type: "imageText",
     image: "/images/Qfndx7t79pyrGpTLTIP2m45mc.png",
+    aspect: 2456 / 2148,
     imageFirst: true,
     label: "The new rewards system and impact measurement for users",
     bullets: [
@@ -201,10 +201,10 @@ export const idxfBlocks: CaseStudyBlock[] = [
     type: "paragraph",
     text: "With the creation, iteration, and completion of thousands (yes, thousands!) of wireframes, I successfully finalized the UI Designs for our Pilot phase. To achieve this, I utilized **Google's Material 3 UI Components** to create the final wireframes. With assistance from another UI Designer, we created a detailed **Design System/Style Guide** page, which significantly improved **consistency in terms of white space, balance, and unity** within my designs. This allowed the developers to have easy access to all our design specifications and begin implementing them in the TestFlight app using Flutter.",
   },
-  { type: "image", src: "/images/VS6nQtENZfHzAX1S6azVYQNQ0.png" },
+  { type: "image", src: "/images/VS6nQtENZfHzAX1S6azVYQNQ0.png", aspect: 3996 / 4978 },
 
   { type: "heading", text: "UI for Launch" },
-  { type: "image", src: "/images/eV0jR6oDGXZYQtvGzLkzfarOHI.png", height: 900 },
+  { type: "image", src: "/images/eV0jR6oDGXZYQtvGzLkzfarOHI.png", aspect: 3392 / 5424 },
 
   { type: "heading", text: "Post Designs Outcome" },
   {
@@ -244,6 +244,6 @@ export const idxfBlocks: CaseStudyBlock[] = [
       },
     ],
   },
-  { type: "image", src: "/images/SgotnR3tJfqnsSdvjpB56843C4s.png", height: 500 },
-  { type: "image", src: "/images/1IsBewAuoSpXqAP0beZnju8k6Ng.png", height: 500 },
+  { type: "image", src: "/images/SgotnR3tJfqnsSdvjpB56843C4s.png", aspect: 1616 / 1776 },
+  { type: "image", src: "/images/1IsBewAuoSpXqAP0beZnju8k6Ng.png", aspect: 4184 / 1308 },
 ];

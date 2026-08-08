@@ -7,10 +7,18 @@ export type CaseStudyBlock =
   | { type: "paragraph"; text: string; large?: boolean }
   | { type: "note"; text: string }
   | { type: "list"; items: string[] }
-  | { type: "image"; src: string; height?: number }
-  | { type: "imageRow"; images: string[] }
+  | { type: "image"; src: string; aspect: number }
+  | { type: "imageRow"; images: { src: string; aspect: number }[] }
   | { type: "columns"; items: CaseStudyColumn[] }
-  | { type: "imageText"; image: string; label?: string; text?: string; bullets?: string[]; imageFirst?: boolean };
+  | {
+      type: "imageText";
+      image: string;
+      aspect: number;
+      label?: string;
+      text?: string;
+      bullets?: string[];
+      imageFirst?: boolean;
+    };
 
 function SectionHeading({ text }: { text: string }) {
   return (
@@ -128,26 +136,27 @@ export function CaseStudyBlocks({ blocks }: { blocks: CaseStudyBlock[] }) {
               <div
                 key={i}
                 className="relative my-4 w-full overflow-hidden rounded-[15px] bg-surface"
-                style={{ height: block.height ?? 500, aspectRatio: block.height ? undefined : "16/9" }}
+                style={{ aspectRatio: block.aspect }}
               >
                 <Image
                   src={block.src}
                   alt=""
                   fill
                   sizes="(min-width: 1200px) 1120px, 100vw"
-                  className="object-cover"
+                  className="object-contain"
                 />
               </div>
             );
           case "imageRow":
             return (
               <div key={i} className="my-4 flex flex-col gap-5 tablet:flex-row">
-                {block.images.map((src) => (
+                {block.images.map((img) => (
                   <div
-                    key={src}
-                    className="relative h-[300px] w-full overflow-hidden rounded-[15px] bg-surface tablet:h-[400px]"
+                    key={img.src}
+                    className="relative w-full overflow-hidden rounded-[15px] bg-surface"
+                    style={{ aspectRatio: img.aspect }}
                   >
-                    <Image src={src} alt="" fill sizes="(min-width: 1200px) 560px, 100vw" className="object-cover" />
+                    <Image src={img.src} alt="" fill sizes="(min-width: 1200px) 560px, 100vw" className="object-contain" />
                   </div>
                 ))}
               </div>
@@ -160,8 +169,11 @@ export function CaseStudyBlocks({ blocks }: { blocks: CaseStudyBlock[] }) {
                   block.imageFirst ? "" : "desktop:flex-row-reverse"
                 }`}
               >
-                <div className="relative h-[280px] w-full shrink-0 overflow-hidden rounded-[15px] bg-surface desktop:h-[380px] desktop:w-1/2">
-                  <Image src={block.image} alt="" fill sizes="(min-width: 1200px) 560px, 100vw" className="object-cover" />
+                <div
+                  className="relative w-full shrink-0 overflow-hidden rounded-[15px] bg-surface desktop:w-1/2"
+                  style={{ aspectRatio: block.aspect }}
+                >
+                  <Image src={block.image} alt="" fill sizes="(min-width: 1200px) 560px, 100vw" className="object-contain" />
                 </div>
                 <div className="flex flex-1 flex-col gap-4">
                   {block.label && <p className="text-[14px] font-medium desktop:text-[16px]">{block.label}</p>}
