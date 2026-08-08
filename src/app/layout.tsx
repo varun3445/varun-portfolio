@@ -23,9 +23,8 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "Varun Srivathsan — Portfolio",
-  description:
-    "I am Varun, a multidisciplinary designer specialising in end-to-end product creation through prototyping, MVP development, and motion design.",
+  title: "Varun's Portfolio",
+  description: "Varun's portfolio, crafted with passion.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
