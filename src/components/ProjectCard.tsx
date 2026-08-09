@@ -10,8 +10,8 @@ type ProjectCardProps = {
   services: string[];
   link?: string;
   status?: "published" | "building";
-  /** "grid" cards use a 3:4 image and a stacked title/status row on mobile
-   * only (tablet and up match "pinned" exactly). Defaults to "pinned". */
+  /** "grid" cards use a stacked title/status row at the tablet breakpoint
+   * only (mobile and desktop match "pinned" exactly). Defaults to "pinned". */
   variant?: "pinned" | "grid";
 };
 
@@ -31,11 +31,7 @@ export function ProjectCard({
       onMouseLeave={() => setCursorVariant("default")}
       className="group flex flex-col gap-6"
     >
-      <div
-        className={`relative w-full overflow-hidden rounded-3xl bg-surface ${
-          variant === "grid" ? "aspect-[3/4] tablet:aspect-[4/3]" : "aspect-[4/3]"
-        }`}
-      >
+      <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl bg-surface">
         <Image
           src={mainImage}
           alt={projectTitle}
@@ -47,7 +43,7 @@ export function ProjectCard({
       <div
         className={
           variant === "grid"
-            ? "flex flex-col gap-1 tablet:flex-row tablet:items-baseline tablet:justify-between tablet:gap-4"
+            ? "flex items-baseline justify-between gap-4 tablet:flex-col tablet:items-start tablet:justify-start tablet:gap-1 desktop:flex-row desktop:items-baseline desktop:justify-between desktop:gap-4"
             : "flex items-baseline justify-between gap-4"
         }
       >

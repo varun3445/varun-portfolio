@@ -29,8 +29,8 @@ export default function WorksPage() {
           )}
         </div>
 
-        {/* Grid: 2x2 on mobile/tablet (folds in the 2nd pinned project), 3x3 on desktop */}
-        <div className="grid grid-cols-2 gap-x-[24px] gap-y-16 desktop:grid-cols-3">
+        {/* Grid: single column on mobile, 2x2 on tablet (folds in the 2nd pinned project), 3x3 on desktop */}
+        <div className="grid grid-cols-1 gap-x-[24px] gap-y-16 tablet:grid-cols-2 desktop:grid-cols-3">
           {pinned2 && (
             <div className="desktop:hidden">
               <ProjectCard key={pinned2.projectTitle} {...pinned2} variant="grid" />
