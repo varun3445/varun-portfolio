@@ -125,7 +125,7 @@ export function CaseStudyBlocks({ blocks }: { blocks: CaseStudyBlock[] }) {
                   ? "grid-cols-2 tablet:grid-cols-4"
                   : cols === 3
                     ? "grid-cols-2 tablet:grid-cols-3"
-                    : "grid-cols-2";
+                    : "grid-cols-1 tablet:grid-cols-2";
             return (
               <div key={i} className={`grid ${gridClass} gap-x-6 gap-y-8 py-[30px] first:pt-0`}>
                 {block.items.map((item) => (

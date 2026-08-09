@@ -247,7 +247,7 @@ export const idxfBlocks: CaseStudyBlock[] = [
       },
     ],
   },
-  { type: "image", src: "/images/1IsBewAuoSpXqAP0beZnju8k6Ng.png", aspect: 3929 / 1036, widthPct: 75 },
+  { type: "image", src: "/images/1IsBewAuoSpXqAP0beZnju8k6Ng.png", aspect: 3929 / 1036 },
 ];
 
 // Trimmed template reused for case studies still being built: Executive Summary
@@ -356,5 +356,5 @@ export const idxfBlocksShort: CaseStudyBlock[] = [
       },
     ],
   },
-  { type: "image", src: "/images/1IsBewAuoSpXqAP0beZnju8k6Ng.png", aspect: 3929 / 1036, widthPct: 75 },
+  { type: "image", src: "/images/1IsBewAuoSpXqAP0beZnju8k6Ng.png", aspect: 3929 / 1036 },
 ];
