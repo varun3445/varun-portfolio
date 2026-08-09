@@ -39,9 +39,9 @@ export const PROJECTS: Project[] = [
     status: "building",
   },
   {
-    mainImage: "/images/1Fbz3ZMDBgHq9zCQAHR9wL6zV9U.png",
+    mainImage: "/images/kaapu-ai-hero.png",
     projectTitle: "Kaapu AI",
-    services: ["Mobile App", "Community Platform", "Government"],
+    services: ["Mobile App", "Health Tech", "Voice AI"],
     link: "/works/kaapu-ai",
     status: "building",
     hideFromHome: true,

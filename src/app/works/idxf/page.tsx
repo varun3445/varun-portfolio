@@ -7,7 +7,7 @@ export default function IdxfPage() {
   return (
     <CaseStudy
       title="Idea Forge"
-      heroImage="/images/iRDfKhqqfQU2r4FtqVqKwZpLCdY.png"
+      heroImage="/images/idxf-hero.png"
       summary={idxfSummary}
       appLink="https://idxf.netlify.app"
       blocks={idxfBlocks}

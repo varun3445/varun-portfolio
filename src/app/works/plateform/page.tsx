@@ -7,7 +7,7 @@ export default function PlateformPage() {
   return (
     <CaseStudy
       title="Plateform"
-      heroImage="/images/1Fbz3ZMDBgHq9zCQAHR9wL6zV9U.png"
+      heroImage="/images/plateform-hero.png"
       summary={plateformSummary}
       appLink="https://plateform-hounslow.netlify.app"
       blocks={plateformBlocks}
