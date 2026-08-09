@@ -44,7 +44,7 @@ export default function WorksPage() {
         <div className="flex justify-center">
           <Button
             title="View Resume"
-            href="https://drive.google.com/file/d/1h4GxjXbm25vT-1h7ctCv5guxaAEIwwup/view?usp=share_link"
+            href="https://drive.google.com/file/d/1K9_UDqh-lxY4Jp_VM6UJpemBM_QQfN16/view?usp=sharing"
           />
         </div>
       </section>

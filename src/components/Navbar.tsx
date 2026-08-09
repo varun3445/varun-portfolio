@@ -12,7 +12,7 @@ const LINKS = [
 ];
 
 const RESUME_LINK =
-  "https://drive.google.com/file/d/1h4GxjXbm25vT-1h7ctCv5guxaAEIwwup/view?usp=share_link";
+  "https://drive.google.com/file/d/1K9_UDqh-lxY4Jp_VM6UJpemBM_QQfN16/view?usp=sharing";
 
 export function Navbar() {
   const [hidden, setHidden] = useState(false);
