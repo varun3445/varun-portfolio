@@ -71,8 +71,24 @@ export default function WorksPage() {
               allowFullScreen
             />
           </div>
-          <div className="aspect-square rounded-3xl bg-surface desktop:col-span-2" />
-          <div className="aspect-square rounded-3xl bg-surface desktop:col-span-2" />
+          <div className="relative aspect-square overflow-hidden rounded-3xl bg-surface desktop:col-span-2">
+            <Image
+              src="/images/p5-port-bento.png"
+              alt=""
+              fill
+              sizes="(min-width: 1200px) 33vw, 100vw"
+              className="object-cover"
+            />
+          </div>
+          <div className="relative aspect-square overflow-hidden rounded-3xl bg-surface desktop:col-span-2">
+            <Image
+              src="/images/p4-port-bento.png"
+              alt=""
+              fill
+              sizes="(min-width: 1200px) 33vw, 100vw"
+              className="object-cover"
+            />
+          </div>
         </div>
       </section>
     </main>
