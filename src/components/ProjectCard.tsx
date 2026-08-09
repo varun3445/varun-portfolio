@@ -10,6 +10,8 @@ type ProjectCardProps = {
   services: string[];
   link?: string;
   status?: "published" | "building";
+  /** Overrides the default status label ("Case Study" / "Deliverable"). */
+  statusLabel?: string;
   /** "grid" cards use a stacked title/status row at the tablet breakpoint
    * only (mobile and desktop match "pinned" exactly). Defaults to "pinned". */
   variant?: "pinned" | "grid";
@@ -21,6 +23,7 @@ export function ProjectCard({
   services,
   link,
   status = "published",
+  statusLabel,
   variant = "pinned",
 }: ProjectCardProps) {
   const { setVariant: setCursorVariant } = useCursor();
@@ -51,7 +54,7 @@ export function ProjectCard({
           {projectTitle}
         </h3>
         <span className="shrink-0 text-[14px] text-gray-2 desktop:text-[16px]">
-          {status === "published" ? "Case Study" : "Building..."}
+          {statusLabel ?? (status === "published" ? "Case Study" : "Deliverable")}
         </span>
       </div>
       <div className="h-px w-full bg-black" />

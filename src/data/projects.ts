@@ -4,6 +4,8 @@ export type Project = {
   services: string[];
   link: string;
   status: "published" | "building";
+  /** Overrides the default status label ("Case Study" / "Deliverable"). */
+  statusLabel?: string;
   /** When true, this project is excluded from the homepage's Featured Works
    * section and only appears on the /works "View All Projects" listing. */
   hideFromHome?: boolean;
@@ -44,6 +46,7 @@ export const PROJECTS: Project[] = [
     services: ["Mobile App", "Community Platform", "AR Experience"],
     link: "/works/pupspot-ar",
     status: "building",
+    statusLabel: "Project",
     hideFromHome: true,
   },
 ];
