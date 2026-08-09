@@ -4,6 +4,9 @@ export type Project = {
   services: string[];
   link: string;
   status: "published" | "building";
+  /** When true, this project is excluded from the homepage's Featured Works
+   * section and only appears on the /works "View All Projects" listing. */
+  hideFromHome?: boolean;
 };
 
 export const PROJECTS: Project[] = [
@@ -34,5 +37,13 @@ export const PROJECTS: Project[] = [
     services: ["Driver Interface", "Ticketing System", "Vehicle HMI"],
     link: "/works/bbmp",
     status: "building",
+  },
+  {
+    mainImage: "/images/1Fbz3ZMDBgHq9zCQAHR9wL6zV9U.png",
+    projectTitle: "Kaapu AI",
+    services: ["Mobile App", "Community Platform", "Government"],
+    link: "/works/kaapu-ai",
+    status: "building",
+    hideFromHome: true,
   },
 ];
