@@ -29,9 +29,9 @@ export function AboutMe() {
           viewport={viewport}
           transition={{ ...spring, delay: 0.15 }}
         >
-          Based in London
+          Based in London,
           <br />
-          and working worldwide.
+          solving problems globally.
         </motion.p>
         <motion.p
           className="text-[16px] font-medium tablet:w-[65%] tablet:text-[18px] tablet:text-right desktop:w-1/2 desktop:text-[20px] desktop-lg:text-[22px]"
@@ -40,8 +40,9 @@ export function AboutMe() {
           viewport={viewport}
           transition={{ ...spring, delay: 0.3 }}
         >
-          Passionate Designer and Developer Crafting Visually Captivating Websites with
-          No-Code Solutions
+          Designer who ships,
+          <br />
+          from no-code sites to full AI products.
         </motion.p>
       </div>
 
