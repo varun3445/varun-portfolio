@@ -58,8 +58,8 @@ export default function WorksPage() {
           </div>
           <div className="aspect-square overflow-hidden rounded-3xl bg-surface desktop:col-span-2">
             <iframe
-              className="h-full w-full"
-              src="https://embed.figma.com/proto/LHPdKBgES63041Ijjs9fJJ/IDXF---24-Steps?node-id=11-306&p=f&viewport=-382%2C-548%2C0.14&scaling=contain&content-scaling=fixed&page-id=0%3A1&embed-host=share"
+              className="block h-full w-full border-0"
+              src="https://embed.figma.com/proto/LHPdKBgES63041Ijjs9fJJ/IDXF---24-Steps?node-id=74-5&p=f&viewport=-382%2C-548%2C0.14&scaling=contain&content-scaling=fixed&page-id=0%3A1&embed-host=share&footer=false"
               allowFullScreen
             />
           </div>
