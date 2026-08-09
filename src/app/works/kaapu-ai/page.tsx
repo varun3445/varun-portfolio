@@ -9,6 +9,7 @@ export default function KaapuAiPage() {
       title="Kaapu AI"
       heroImage="/images/kaapu-ai-hero.png"
       summary={kaapuSummary}
+      appLink="https://kaapu-ai.vercel.app/"
       blocks={kaapuBlocks}
     />
   );
