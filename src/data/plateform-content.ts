@@ -4,7 +4,7 @@ export const plateformSummary =
   "Plateform is a community platform designed for the London Borough of Hounslow, built to connect residents with local resources, services, and each other. The project ran over 3 months and involved end-to-end UX and UI design, from initial discovery through to a live deployed product. The platform was designed around the needs of a diverse public user base where accessibility, clarity, and inclusivity were non-negotiable requirements.";
 
 export const plateformBlocks: CaseStudyBlock[] = [
-  { type: "heading", text: "Design Challenge And Responsibilities Overview" },
+  { type: "heading", text: "Challenges and Responsibilities" },
   {
     type: "columns",
     items: [

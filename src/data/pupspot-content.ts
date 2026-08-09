@@ -4,7 +4,7 @@ export const pupspotSummary =
   "PupSpot AR is a community augmented reality platform designed to connect students and animal welfare communities through shared digital and physical spaces. Built and shipped independently as part of a broader initiative to use AR as a tool for community building, the platform explores how emerging technology can make everyday interactions with local animal welfare causes more engaging, accessible, and meaningful.";
 
 export const pupspotBlocks: CaseStudyBlock[] = [
-  { type: "heading", text: "Design Challenge And Responsibilities Overview" },
+  { type: "heading", text: "Challenges and Responsibilities" },
   {
     type: "columns",
     items: [

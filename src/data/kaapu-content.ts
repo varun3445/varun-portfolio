@@ -4,7 +4,7 @@ export const kaapuSummary =
   "Kaapu AI is the world's first voice-powered health intelligence app for people living alone with chronic illness. Built solo in 4 months and shipped on iOS and Android, Kaapu was born from a personal experience — a severe asthma attack at 2am as an international student, unable to speak or call for help. The app combines voice AI, 3D pain mapping, AI-generated health summaries, and real-time SOS alerts to emergency contacts into a single seamless experience. Kaapu was selected as an InnovationRCA finalist, invited to pitch at Apple, recognised by the Institute for Chronic Health and Pain, and ranked top 10 on PeerPush.";
 
 export const kaapuBlocks: CaseStudyBlock[] = [
-  { type: "heading", text: "Design Challenge And Responsibilities Overview" },
+  { type: "heading", text: "Challenges and Responsibilities" },
   {
     type: "columns",
     items: [

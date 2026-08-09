@@ -4,7 +4,7 @@ export const idxfSummary =
   "IDXF — Idea Forge is a mobile platform designed to address fragmentation in the creative economy, where professionals waste over 10 hours a week across disconnected tools with no structured way to find collaborators. I led the end-to-end UX process from research through to a validated, developer-ready prototype, conducting user surveys, competitor analysis, and four live experiments with over 100 participants before committing to a single design direction. The core experience centres on AI-driven project matching, a gesture-based explore interface built around familiar interaction patterns, and a phygital NFC networking system that achieved a 98% success rate in testing. A rewards and contribution tracking system was introduced in response to direct user feedback, incentivising ongoing collaboration and community engagement. The final UI was delivered using Google's Material 3 components alongside a comprehensive design system, ensuring consistency and a clean handoff for Flutter development. Post-launch, the platform received over 42,000 social media impressions and 110 supporters, validating both the product direction and the design decisions made throughout the process.";
 
 export const idxfBlocks: CaseStudyBlock[] = [
-  { type: "heading", text: "Design Challenge And Responsibilities Overview" },
+  { type: "heading", text: "Challenges and Responsibilities" },
   {
     type: "columns",
     items: [
@@ -254,7 +254,7 @@ export const idxfBlocks: CaseStudyBlock[] = [
 // (via the `summary` prop), Design Challenge, Vision, Process, Initial Problem
 // Discovery, then UI for Launch and Post Designs Outcome.
 export const idxfBlocksShort: CaseStudyBlock[] = [
-  { type: "heading", text: "Design Challenge And Responsibilities Overview" },
+  { type: "heading", text: "Challenges and Responsibilities" },
   {
     type: "columns",
     items: [
