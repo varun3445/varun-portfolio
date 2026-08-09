@@ -1,5 +1,5 @@
 import { CaseStudy } from "@/components/CaseStudy";
-import { idxfBlocksShort, idxfSummary } from "@/data/idxf-content";
+import { bbmpBlocks, bbmpSummary } from "@/data/bbmp-content";
 
 export const metadata = { title: "BBMP Ride-Share — Varun Srivathsan" };
 
@@ -8,8 +8,8 @@ export default function BbmpPage() {
     <CaseStudy
       title="BBMP Ride-Share"
       heroImage="/images/AozA2pshbJnjHkHaRNwe98m77Y.png"
-      summary={idxfSummary}
-      blocks={idxfBlocksShort}
+      summary={bbmpSummary}
+      blocks={bbmpBlocks}
     />
   );
 }
