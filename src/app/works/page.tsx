@@ -1,6 +1,4 @@
-import { Button } from "@/components/Button";
 import { ProjectCard } from "@/components/ProjectCard";
-import { CtaFooter } from "@/components/sections/CtaFooter";
 import { PROJECTS } from "@/data/projects";
 
 export const metadata = { title: "Works — Varun Srivathsan" };
@@ -40,16 +38,20 @@ export default function WorksPage() {
             <ProjectCard key={project.projectTitle} {...project} variant="grid" />
           ))}
         </div>
-
-        <div className="flex justify-center">
-          <Button
-            title="View Resume"
-            href="https://drive.google.com/file/d/1K9_UDqh-lxY4Jp_VM6UJpemBM_QQfN16/view?usp=sharing"
-          />
-        </div>
       </section>
 
-      <CtaFooter />
+      <section className="flex w-full flex-col gap-6 px-[15px] pb-24 tablet:px-[30px] desktop:px-[64px]">
+        <h2 className="text-[16px] font-medium uppercase tracking-wide desktop:text-[18px]">
+          Just a bit more visuals.
+        </h2>
+        <div className="grid grid-cols-2 gap-[24px] desktop:grid-cols-6">
+          <div className="col-span-2 h-[220px] rounded-3xl bg-surface tablet:h-[280px] desktop:col-span-3 desktop:h-[360px]" />
+          <div className="col-span-1 h-[220px] rounded-3xl bg-surface tablet:h-[280px] desktop:col-span-3 desktop:h-[360px]" />
+          <div className="col-span-1 h-[220px] rounded-3xl bg-surface tablet:h-[280px] desktop:col-span-2 desktop:h-[360px]" />
+          <div className="col-span-1 h-[220px] rounded-3xl bg-surface tablet:h-[280px] desktop:col-span-2 desktop:h-[360px]" />
+          <div className="col-span-1 h-[220px] rounded-3xl bg-surface tablet:h-[280px] desktop:col-span-2 desktop:h-[360px]" />
+        </div>
+      </section>
     </main>
   );
 }
