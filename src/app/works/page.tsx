@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ProjectCard } from "@/components/ProjectCard";
 import { PROJECTS } from "@/data/projects";
 
@@ -44,12 +45,26 @@ export default function WorksPage() {
         <h2 className="text-[16px] font-medium uppercase tracking-wide desktop:text-[18px]">
           Just a bit more visuals.
         </h2>
-        <div className="grid grid-cols-2 gap-[24px] desktop:grid-cols-6">
-          <div className="col-span-2 h-[220px] rounded-3xl bg-surface tablet:h-[280px] desktop:col-span-3 desktop:h-[360px]" />
-          <div className="col-span-1 h-[220px] rounded-3xl bg-surface tablet:h-[280px] desktop:col-span-3 desktop:h-[360px]" />
-          <div className="col-span-1 h-[220px] rounded-3xl bg-surface tablet:h-[280px] desktop:col-span-2 desktop:h-[360px]" />
-          <div className="col-span-1 h-[220px] rounded-3xl bg-surface tablet:h-[280px] desktop:col-span-2 desktop:h-[360px]" />
-          <div className="col-span-1 h-[220px] rounded-3xl bg-surface tablet:h-[280px] desktop:col-span-2 desktop:h-[360px]" />
+        <div className="grid grid-cols-1 gap-[24px] tablet:grid-cols-2 desktop:grid-cols-6">
+          <div className="aspect-[4/3] rounded-3xl bg-surface tablet:col-span-2 desktop:col-span-3" />
+          <div className="relative aspect-[4/3] overflow-hidden rounded-3xl bg-surface desktop:col-span-3">
+            <Image
+              src="/images/vsxbs-bento.png"
+              alt=""
+              fill
+              sizes="(min-width: 1200px) 50vw, 100vw"
+              className="object-cover"
+            />
+          </div>
+          <div className="aspect-square overflow-hidden rounded-3xl bg-surface desktop:col-span-2">
+            <iframe
+              className="h-full w-full"
+              src="https://embed.figma.com/proto/LHPdKBgES63041Ijjs9fJJ/IDXF---24-Steps?node-id=11-306&p=f&viewport=-382%2C-548%2C0.14&scaling=contain&content-scaling=fixed&page-id=0%3A1&embed-host=share"
+              allowFullScreen
+            />
+          </div>
+          <div className="aspect-square rounded-3xl bg-surface desktop:col-span-2" />
+          <div className="aspect-square rounded-3xl bg-surface desktop:col-span-2" />
         </div>
       </section>
     </main>
