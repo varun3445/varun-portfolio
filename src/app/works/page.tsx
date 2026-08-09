@@ -73,7 +73,7 @@ export default function WorksPage() {
           </div>
           <div className="relative aspect-square overflow-hidden rounded-3xl bg-surface desktop:col-span-2">
             <Image
-              src="/images/p5-bento.png"
+              src="/images/p5-bento-v2.png"
               alt=""
               fill
               sizes="(min-width: 1200px) 33vw, 100vw"
@@ -82,7 +82,7 @@ export default function WorksPage() {
           </div>
           <div className="relative aspect-square overflow-hidden rounded-3xl bg-surface desktop:col-span-2">
             <Image
-              src="/images/p4-port-bento.png"
+              src="/images/p4-bento-v2.png"
               alt=""
               fill
               sizes="(min-width: 1200px) 33vw, 100vw"
