@@ -1,5 +1,12 @@
 const EXPERIENCE = [
   {
+    companyName: "Kaapu AI Limited",
+    position: "Founder | Product Lead",
+    timeline: "Feb 2026 - Present",
+    description:
+      "Designed and built the world's first voice-powered health intelligence app for chronic illness patients solo, owning the full product lifecycle from user research and conversational UX through to iOS and Android development in React Native. Pivoted the product direction within two weeks based on user research, replacing manual logging with a voice-triggered AI interaction model and custom 3D pain mapping interface. Recognised by the Institute for Chronic Health and Pain, selected as an InnovationRCA finalist, and invited to pitch at Apple.",
+  },
+  {
     companyName: "WQA (UK) Limited",
     position: "Product Designer",
     timeline: "Oct 2025 - Present",
@@ -8,31 +15,24 @@ const EXPERIENCE = [
   },
   {
     companyName: "IDXF - Idea Forge",
-    position: "Founder | Product Innovator",
+    position: "Product Innovator",
     timeline: "Sep 2024 - Sep 2025",
     description:
       "Led the end-to-end product development lifecycle for a new digital platform, defining user journeys and delivering core features such as profile creation, skill matching, and community engagement. Achieved strong early traction with 42K+ impressions, 120+ supporters, and 10 core contributors within 48 hours.",
   },
   {
     companyName: "Havells India Ltd",
-    position: "Product Owner - Capstone",
+    position: "Industrial Design - Project Lead",
     timeline: "Jan 2024 - May 2024",
     description:
       "Designed an AI-powered smart refrigerator featuring animated feedback, custom iconography, and high-fidelity interfaces with micro-animations to enhance accessibility and user experience. Developed a strategic roadmap for Havells' 2030 entry into the $1.9B mini-refrigerator market.",
   },
   {
     companyName: "Bruhat Bengaluru Mahanagara Palike",
-    position: "Product Owner - Capstone",
+    position: "Product Owner - Transportation",
     timeline: "Aug 2023 - Dec 2023",
     description:
       "Designed an efficient micro-mobility vehicle tailored for Bengaluru's traffic, integrating exterior information panels and a driver interface. Developed experience maps and service blueprints to support the concept, which was later presented at Bangalore Design Week and received accolades from the Bengaluru government.",
-  },
-  {
-    companyName: "Ashok Leyland",
-    position: "Transportation Design Intern",
-    timeline: "Jun 2023 - Jul 2023",
-    description:
-      "Developed a sustainable vehicle using recycled materials, improving fuel efficiency and increasing legroom by 30%. Optimised the vehicle's interaction design to achieve 90% user satisfaction through intuitive controls and UIs, and created a 10-year forecast map to anticipate future trends.",
   },
 ];
 
