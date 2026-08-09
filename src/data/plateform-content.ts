@@ -55,6 +55,7 @@ export const plateformBlocks: CaseStudyBlock[] = [
   { type: "heading", text: "Post Designs Outcome" },
   {
     type: "columns",
+    layout: "outcome",
     items: [
       {
         label: "Market Validation",

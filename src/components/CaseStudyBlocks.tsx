@@ -9,7 +9,7 @@ export type CaseStudyBlock =
   | { type: "list"; items: string[] }
   | { type: "image"; src: string; aspect: number; widthPct?: number; marginBottom?: number }
   | { type: "imageRow"; images: { src: string; aspect: number }[] }
-  | { type: "columns"; items: CaseStudyColumn[] }
+  | { type: "columns"; items: CaseStudyColumn[]; layout?: "default" | "outcome" }
   | {
       type: "imageText";
       image: string;
@@ -119,11 +119,13 @@ export function CaseStudyBlocks({ blocks }: { blocks: CaseStudyBlock[] }) {
           case "columns": {
             const cols = Math.min(block.items.length, 4);
             const gridClass =
-              cols >= 4
-                ? "grid-cols-2 tablet:grid-cols-4"
-                : cols === 3
-                  ? "grid-cols-2 tablet:grid-cols-3"
-                  : "grid-cols-2";
+              block.layout === "outcome"
+                ? "grid-cols-1 tablet:grid-cols-4 desktop:grid-cols-2"
+                : cols >= 4
+                  ? "grid-cols-2 tablet:grid-cols-4"
+                  : cols === 3
+                    ? "grid-cols-2 tablet:grid-cols-3"
+                    : "grid-cols-2";
             return (
               <div key={i} className={`grid ${gridClass} gap-x-6 gap-y-8 py-[30px] first:pt-0`}>
                 {block.items.map((item) => (

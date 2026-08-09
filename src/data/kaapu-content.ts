@@ -64,6 +64,7 @@ export const kaapuBlocks: CaseStudyBlock[] = [
   { type: "heading", text: "Post Designs Outcome" },
   {
     type: "columns",
+    layout: "outcome",
     items: [
       {
         label: "Market Validation",
