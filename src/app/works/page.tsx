@@ -33,11 +33,11 @@ export default function WorksPage() {
         <div className="grid grid-cols-2 gap-x-[24px] gap-y-16 desktop:grid-cols-3">
           {pinned2 && (
             <div className="desktop:hidden">
-              <ProjectCard key={pinned2.projectTitle} {...pinned2} />
+              <ProjectCard key={pinned2.projectTitle} {...pinned2} variant="grid" />
             </div>
           )}
           {rest.map((project) => (
-            <ProjectCard key={project.projectTitle} {...project} />
+            <ProjectCard key={project.projectTitle} {...project} variant="grid" />
           ))}
         </div>
 

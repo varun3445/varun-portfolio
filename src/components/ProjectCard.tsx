@@ -10,6 +10,9 @@ type ProjectCardProps = {
   services: string[];
   link?: string;
   status?: "published" | "building";
+  /** "grid" cards use a 3:4 image and a stacked title/status row on mobile
+   * only (tablet and up match "pinned" exactly). Defaults to "pinned". */
+  variant?: "pinned" | "grid";
 };
 
 export function ProjectCard({
@@ -18,16 +21,21 @@ export function ProjectCard({
   services,
   link,
   status = "published",
+  variant = "pinned",
 }: ProjectCardProps) {
-  const { setVariant } = useCursor();
+  const { setVariant: setCursorVariant } = useCursor();
   const content = (
     <div
       data-cursor="work"
-      onMouseEnter={() => setVariant("work")}
-      onMouseLeave={() => setVariant("default")}
+      onMouseEnter={() => setCursorVariant("work")}
+      onMouseLeave={() => setCursorVariant("default")}
       className="group flex flex-col gap-6"
     >
-      <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl bg-surface">
+      <div
+        className={`relative w-full overflow-hidden rounded-3xl bg-surface ${
+          variant === "grid" ? "aspect-[3/4] tablet:aspect-[4/3]" : "aspect-[4/3]"
+        }`}
+      >
         <Image
           src={mainImage}
           alt={projectTitle}
@@ -36,7 +44,13 @@ export function ProjectCard({
           className="object-cover transition-transform duration-500 group-hover:scale-105"
         />
       </div>
-      <div className="flex items-baseline justify-between gap-4">
+      <div
+        className={
+          variant === "grid"
+            ? "flex flex-col gap-1 tablet:flex-row tablet:items-baseline tablet:justify-between tablet:gap-4"
+            : "flex items-baseline justify-between gap-4"
+        }
+      >
         <h3 className="text-[22px] font-medium tablet:text-[28px] desktop-lg:text-[32px]">
           {projectTitle}
         </h3>
