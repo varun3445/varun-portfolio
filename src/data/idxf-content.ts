@@ -204,7 +204,14 @@ export const idxfBlocks: CaseStudyBlock[] = [
   { type: "image", src: "/images/VS6nQtENZfHzAX1S6azVYQNQ0.png", aspect: 3996 / 4978 },
 
   { type: "heading", text: "UI for Launch" },
-  { type: "image", src: "/images/eV0jR6oDGXZYQtvGzLkzfarOHI.png", aspect: 3392 / 5424, widthPct: 64 },
+  {
+    type: "image",
+    src: "/images/eV0jR6oDGXZYQtvGzLkzfarOHI.png",
+    aspect: 3392 / 5424,
+    widthPct: 64,
+    desktopSrc: "/images/idxf-ui-desktop.png",
+    desktopAspect: 2400 / 947,
+  },
 
   { type: "heading", text: "Post Designs Outcome" },
   {

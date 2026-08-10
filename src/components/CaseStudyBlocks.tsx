@@ -7,7 +7,16 @@ export type CaseStudyBlock =
   | { type: "paragraph"; text: string; large?: boolean }
   | { type: "note"; text: string }
   | { type: "list"; items: string[] }
-  | { type: "image"; src: string; aspect: number; widthPct?: number; marginBottom?: number }
+  | {
+      type: "image";
+      src: string;
+      aspect: number;
+      widthPct?: number;
+      marginBottom?: number;
+      desktopSrc?: string;
+      desktopAspect?: number;
+      desktopWidthPct?: number;
+    }
   | { type: "imageRow"; images: { src: string; aspect: number }[] }
   | { type: "columns"; items: CaseStudyColumn[]; layout?: "default" | "outcome" }
   | {
@@ -136,24 +145,45 @@ export function CaseStudyBlocks({ blocks }: { blocks: CaseStudyBlock[] }) {
           }
           case "image":
             return (
-              <div
-                key={i}
-                className="relative mt-4 overflow-hidden rounded-[15px]"
-                style={{
-                  aspectRatio: block.aspect,
-                  width: `${block.widthPct ?? 100}%`,
-                  marginLeft: "auto",
-                  marginRight: "auto",
-                  marginBottom: block.marginBottom ?? 16,
-                }}
-              >
-                <Image
-                  src={block.src}
-                  alt=""
-                  fill
-                  sizes="(min-width: 1200px) 1120px, 100vw"
-                  className="object-cover"
-                />
+              <div key={i}>
+                <div
+                  className={`relative mt-4 overflow-hidden rounded-[15px] ${block.desktopSrc ? "desktop:hidden" : ""}`}
+                  style={{
+                    aspectRatio: block.aspect,
+                    width: `${block.widthPct ?? 100}%`,
+                    marginLeft: "auto",
+                    marginRight: "auto",
+                    marginBottom: block.marginBottom ?? 16,
+                  }}
+                >
+                  <Image
+                    src={block.src}
+                    alt=""
+                    fill
+                    sizes="(min-width: 1200px) 1120px, 100vw"
+                    className="object-cover"
+                  />
+                </div>
+                {block.desktopSrc && (
+                  <div
+                    className="relative mt-4 hidden overflow-hidden rounded-[15px] desktop:block"
+                    style={{
+                      aspectRatio: block.desktopAspect ?? block.aspect,
+                      width: `${block.desktopWidthPct ?? 100}%`,
+                      marginLeft: "auto",
+                      marginRight: "auto",
+                      marginBottom: block.marginBottom ?? 16,
+                    }}
+                  >
+                    <Image
+                      src={block.desktopSrc}
+                      alt=""
+                      fill
+                      sizes="(min-width: 1200px) 1500px, 100vw"
+                      className="object-cover"
+                    />
+                  </div>
+                )}
               </div>
             );
           case "imageRow":

@@ -28,7 +28,7 @@ export function SplineEmbed({ url, className }: { url: string; className?: strin
       {/* @ts-expect-error custom element */}
       <spline-viewer
         url={url}
-        className="pointer-events-none absolute left-1/2 top-1/2 block h-[118%] w-[108%] origin-center -translate-x-1/2 -translate-y-1/2 scale-75 tablet:scale-100"
+        className="pointer-events-none absolute left-1/2 top-1/2 block h-[118%] w-[108%] origin-center -translate-x-1/2 -translate-y-1/2 scale-75 tablet:scale-110 desktop:scale-100"
       />
       {/* Masks the "Built with Spline" watermark badge, which Spline anchors
           to this canvas's own bottom-right corner. Sizing the host to hide
