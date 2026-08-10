@@ -31,7 +31,7 @@ export function CaseStudy({ title, heroImage, summary, appLink, blocks }: CaseSt
                 style={{ backgroundColor: "rgb(232,255,186)" }}
               >
                 View app build
-                <span aria-hidden>→</span>
+                <span aria-hidden className="inline-block -rotate-45">→</span>
               </a>
             )}
           </div>
