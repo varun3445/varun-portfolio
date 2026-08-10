@@ -14,7 +14,7 @@ export function CaseStudy({ title, heroImage, summary, appLink, blocks }: CaseSt
   return (
     <main className="flex flex-1 flex-col bg-white">
       <section
-        className="flex w-full flex-col items-center gap-[10px] px-4 pb-[24px] pt-[100px] tablet:px-[40px] tablet:pb-[60px] tablet:pt-[100px] desktop:px-[64px]"
+        className="flex w-full flex-col items-center gap-4 px-4 pb-[24px] pt-[100px] tablet:gap-6 tablet:px-[40px] tablet:pb-[60px] tablet:pt-[100px] desktop:gap-10 desktop:px-[64px]"
         style={{ minHeight: "90vh" }}
       >
         <div className="mx-auto flex w-full max-w-[1500px] flex-col gap-[30px]">

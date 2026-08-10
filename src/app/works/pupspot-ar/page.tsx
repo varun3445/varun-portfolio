@@ -9,7 +9,6 @@ export default function PupspotArPage() {
       title="Pupspot-AR"
       heroImage="/images/FTaIF6vN0dinKBMZ0o8rryptIwE.png"
       summary={pupspotSummary}
-      appLink="https://pupspot-ar.netlify.app"
       blocks={pupspotBlocks}
     />
   );
