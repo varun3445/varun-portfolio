@@ -55,7 +55,7 @@ export function CaseStudy({ title, heroImage, summary, appLink, blocks }: CaseSt
         <div className="mx-auto flex w-full max-w-[1500px] flex-col gap-[40px]">
           <div className="h-[2px] w-full bg-black" />
           <div className="flex flex-col gap-[60px]">
-            <div className="relative h-[400px] w-full overflow-hidden rounded-[24px] bg-surface tablet:h-[550px] desktop:h-[750px]">
+            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[24px] bg-surface">
               <Image src={heroImage} alt={title} fill sizes="1500px" className="object-cover" />
             </div>
 
