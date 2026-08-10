@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { Logo } from "./Logo";
 import { NavLink } from "./NavLink";
-import { ThemeToggle } from "./ThemeToggle";
 
 const LINKS = [
   { title: "HOME", href: "/" },
@@ -43,38 +42,32 @@ export function Navbar() {
       <div className="relative flex w-full items-center justify-between px-[15px] py-6 tablet:px-[30px] desktop:px-[64px]">
         <Logo size={45} />
 
-        <div className="hidden items-center gap-3 md:flex">
-          <div className="flex items-center gap-1">
-            {LINKS.map((link) => (
-              <NavLink key={link.href} title={link.title} href={link.href} />
-            ))}
-            <NavLink title="RESUME" href={RESUME_LINK} variant="fill" />
-          </div>
-          <ThemeToggle />
+        <div className="hidden items-center gap-1 md:flex">
+          {LINKS.map((link) => (
+            <NavLink key={link.href} title={link.title} href={link.href} />
+          ))}
+          <NavLink title="RESUME" href={RESUME_LINK} variant="fill" />
         </div>
 
-        <div className="flex items-center gap-3 md:hidden">
-          <ThemeToggle />
-          <button
-            type="button"
-            aria-label={mobileOpen ? "Close menu" : "Open menu"}
-            onClick={() => setMobileOpen((v) => !v)}
-            className="relative flex h-8 w-8 items-center justify-center"
-          >
-            <motion.span
-              animate={mobileOpen ? { rotate: -45, y: 0 } : { rotate: 0, y: -6 }}
-              className="absolute h-0.5 w-5 rounded-full bg-black dark:bg-dark-text"
-            />
-            <motion.span
-              animate={mobileOpen ? { opacity: 0 } : { opacity: 1 }}
-              className="absolute h-0.5 w-5 rounded-full bg-black dark:bg-dark-text"
-            />
-            <motion.span
-              animate={mobileOpen ? { rotate: 45, y: 0 } : { rotate: 0, y: 6 }}
-              className="absolute h-0.5 w-5 rounded-full bg-black dark:bg-dark-text"
-            />
-          </button>
-        </div>
+        <button
+          type="button"
+          aria-label={mobileOpen ? "Close menu" : "Open menu"}
+          onClick={() => setMobileOpen((v) => !v)}
+          className="relative flex h-8 w-8 items-center justify-center md:hidden"
+        >
+          <motion.span
+            animate={mobileOpen ? { rotate: -45, y: 0 } : { rotate: 0, y: -6 }}
+            className="absolute h-0.5 w-5 rounded-full bg-black dark:bg-dark-text"
+          />
+          <motion.span
+            animate={mobileOpen ? { opacity: 0 } : { opacity: 1 }}
+            className="absolute h-0.5 w-5 rounded-full bg-black dark:bg-dark-text"
+          />
+          <motion.span
+            animate={mobileOpen ? { rotate: 45, y: 0 } : { rotate: 0, y: 6 }}
+            className="absolute h-0.5 w-5 rounded-full bg-black dark:bg-dark-text"
+          />
+        </button>
 
         {mobileOpen && (
           <motion.div
