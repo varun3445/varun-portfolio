@@ -34,7 +34,7 @@ export function ProjectCard({
       onMouseLeave={() => setCursorVariant("default")}
       className="group flex flex-col gap-6"
     >
-      <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl bg-surface">
+      <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl bg-surface dark:bg-dark-surface">
         <Image
           src={mainImage}
           alt={projectTitle}
@@ -53,12 +53,12 @@ export function ProjectCard({
         <h3 className="text-[22px] font-medium tablet:text-[28px] desktop-lg:text-[32px]">
           {projectTitle}
         </h3>
-        <span className="shrink-0 text-[14px] text-gray-2 desktop:text-[16px]">
+        <span className="shrink-0 text-[14px] text-gray-2 dark:text-dark-gray-2 desktop:text-[16px]">
           {statusLabel ?? (status === "published" ? "Case Study" : "Deliverable")}
         </span>
       </div>
-      <div className="h-px w-full bg-black" />
-      <p className="text-[14px] text-gray-2 desktop:text-[16px]">
+      <div className="h-px w-full bg-black dark:bg-dark-text" />
+      <p className="text-[14px] text-gray-2 dark:text-dark-gray-2 desktop:text-[16px]">
         {services.filter(Boolean).join(" • ")}
       </p>
     </div>

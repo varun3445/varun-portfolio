@@ -37,8 +37,8 @@ export function Stat({ end, suffix, title }: { end: number; suffix: string; titl
         <span ref={ref}>0</span>
         {suffix}
       </p>
-      <div className="h-px w-full bg-black" />
-      <p className="text-[14px] text-gray-2 desktop:text-[16px]">{title}</p>
+      <div className="h-px w-full bg-black dark:bg-dark-text" />
+      <p className="text-[14px] text-gray-2 dark:text-dark-gray-2 desktop:text-[16px]">{title}</p>
     </div>
   );
 }

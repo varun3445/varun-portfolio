@@ -30,7 +30,7 @@ export function NavLink({ title, href, variant = "line" }: NavLinkProps) {
   return (
     <Link
       href={href}
-      className="group relative block overflow-hidden px-4 py-2 text-[12px] font-medium uppercase tracking-wide text-black tablet:text-[14px] desktop:text-[16px] desktop-lg:text-[20px]"
+      className="group relative block overflow-hidden px-4 py-2 text-[12px] font-medium uppercase tracking-wide text-black dark:text-dark-text tablet:text-[14px] desktop:text-[16px] desktop-lg:text-[20px]"
     >
       <span className="relative block h-[1.2em] overflow-hidden">
         <motion.span
@@ -43,7 +43,7 @@ export function NavLink({ title, href, variant = "line" }: NavLinkProps) {
           <span className="block h-[1.2em] leading-[1.2em]">{title}</span>
         </motion.span>
       </span>
-      <span className="absolute inset-x-4 bottom-1.5 h-px origin-left scale-x-0 bg-black transition-transform duration-300 group-hover:scale-x-100" />
+      <span className="absolute inset-x-4 bottom-1.5 h-px origin-left scale-x-0 bg-black dark:bg-dark-text transition-transform duration-300 group-hover:scale-x-100" />
     </Link>
   );
 }

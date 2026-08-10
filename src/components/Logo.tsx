@@ -9,7 +9,7 @@ export function Logo({ size = 45 }: { size?: number }) {
         alt="Varun Srivathsan logo"
         fill
         sizes={`${size}px`}
-        className="object-contain"
+        className="object-contain dark:invert"
       />
     </Link>
   );

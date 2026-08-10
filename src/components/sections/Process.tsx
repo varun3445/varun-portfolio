@@ -57,16 +57,16 @@ export function Process() {
   const x = useTransform(scrollYProgress, [0, 1], [0, endX]);
 
   return (
-    <section className="w-full bg-white px-[15px] pb-[30px] tablet:px-[30px] tablet:pb-[50px] desktop:px-[64px] desktop:pb-[60px]">
+    <section className="w-full bg-white dark:bg-dark-bg px-[15px] pb-[30px] tablet:px-[30px] tablet:pb-[50px] desktop:px-[64px] desktop:pb-[60px]">
       <div className="mx-auto w-full max-w-[2000px]">
         <div className="w-full">
-          <div className="h-px w-full bg-black" />
+          <div className="h-px w-full bg-black dark:bg-dark-text" />
         </div>
 
         <div ref={wrapperRef} className="relative h-[300vh]">
           <div className="sticky top-0 flex h-screen w-full flex-col justify-center gap-[30px] overflow-hidden py-20 tablet:gap-[50px] desktop:gap-[60px]">
             <div className="flex items-center gap-2">
-              <span className="h-2.5 w-2.5 rounded-full bg-black" />
+              <span className="h-2.5 w-2.5 rounded-full bg-black dark:bg-dark-text" />
               <h2 className="text-[16px] font-medium uppercase tracking-wide desktop:text-[18px]">
                 Process
               </h2>
@@ -80,7 +80,7 @@ export function Process() {
                 <div
                   key={step.number}
                   ref={i === STEPS.length - 1 ? lastCardRef : undefined}
-                  className="flex h-[420px] w-[320px] shrink-0 flex-col gap-4 rounded-[15px] border border-black p-8 tablet:h-[480px] md:w-[440px]"
+                  className="flex h-[420px] w-[320px] shrink-0 flex-col gap-4 rounded-[15px] border border-black dark:border-dark-text p-8 tablet:h-[480px] md:w-[440px]"
                 >
                   <div className="flex min-h-[68px] items-start tablet:min-h-[88px] desktop:min-h-[108px]">
                     <h4 className="text-[28px] font-medium leading-[1.2] tablet:text-[36px] desktop:text-[44px]">
@@ -90,7 +90,7 @@ export function Process() {
                   <span className="text-6xl font-medium tablet:text-8xl desktop:text-[144px]">
                     {step.number}
                   </span>
-                  <p className="text-[14px] leading-relaxed text-gray-2 desktop:text-[16px]">
+                  <p className="text-[14px] leading-relaxed text-gray-2 dark:text-dark-gray-2 desktop:text-[16px]">
                     {step.description}
                   </p>
                 </div>

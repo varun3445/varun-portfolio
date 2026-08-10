@@ -33,7 +33,7 @@ export type CaseStudyBlock =
 function SectionHeading({ text }: { text: string }) {
   return (
     <div className="flex items-center gap-2">
-      <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-black" />
+      <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-black dark:bg-dark-text" />
       <h3 className="text-[20px] font-medium tablet:text-[24px] desktop:text-[32px] desktop-lg:text-[24px]">
         {text}
       </h3>
@@ -47,7 +47,7 @@ export function Rich({ text }: { text: string }) {
     <>
       {parts.map((part, i) =>
         part.startsWith("**") && part.endsWith("**") ? (
-          <strong key={i} className="font-semibold text-black">
+          <strong key={i} className="font-semibold text-black dark:text-dark-text">
             {part.slice(2, -2)}
           </strong>
         ) : (
@@ -65,14 +65,14 @@ function ColumnItem({ item }: { item: CaseStudyColumn }) {
         {item.label}
       </p>
       {item.text && (
-        <p className="text-[12px] leading-relaxed text-gray-2 tablet:text-[18px] desktop:text-[20px] desktop-lg:text-[22px]">
+        <p className="text-[12px] leading-relaxed text-gray-2 dark:text-dark-gray-2 tablet:text-[18px] desktop:text-[20px] desktop-lg:text-[22px]">
           <Rich text={item.text} />
         </p>
       )}
       {item.bullets && (
         <ul className="flex flex-col gap-1 pl-4">
           {item.bullets.map((b) => (
-            <li key={b} className="list-disc text-[12px] leading-relaxed text-gray-2 tablet:text-[18px] desktop:text-[20px] desktop-lg:text-[22px]">
+            <li key={b} className="list-disc text-[12px] leading-relaxed text-gray-2 dark:text-dark-gray-2 tablet:text-[18px] desktop:text-[20px] desktop-lg:text-[22px]">
               <Rich text={b} />
             </li>
           ))}
@@ -108,7 +108,7 @@ export function CaseStudyBlocks({ blocks }: { blocks: CaseStudyBlock[] }) {
             );
           case "note":
             return (
-              <p key={i} className="text-[12px] text-gray-1 tablet:text-[16px] desktop:text-[16px] desktop-lg:text-[18px]">
+              <p key={i} className="text-[12px] text-gray-1 dark:text-dark-gray-1 tablet:text-[16px] desktop:text-[16px] desktop-lg:text-[18px]">
                 {block.text}
               </p>
             );
@@ -118,7 +118,7 @@ export function CaseStudyBlocks({ blocks }: { blocks: CaseStudyBlock[] }) {
                 {block.items.map((item) => (
                   <li
                     key={item}
-                    className="list-disc text-[12px] leading-relaxed text-gray-2 tablet:text-[18px] desktop:text-[20px] desktop-lg:text-[22px]"
+                    className="list-disc text-[12px] leading-relaxed text-gray-2 dark:text-dark-gray-2 tablet:text-[18px] desktop:text-[20px] desktop-lg:text-[22px]"
                   >
                     <Rich text={item} />
                   </li>
@@ -217,7 +217,7 @@ export function CaseStudyBlocks({ blocks }: { blocks: CaseStudyBlock[] }) {
                 <div className="flex flex-1 flex-col gap-4">
                   {block.label && <p className="text-[14px] font-medium desktop:text-[16px]">{block.label}</p>}
                   {block.text && (
-                    <p className="text-[12px] leading-relaxed text-gray-2 tablet:text-[18px] desktop:text-[20px] desktop-lg:text-[22px]">
+                    <p className="text-[12px] leading-relaxed text-gray-2 dark:text-dark-gray-2 tablet:text-[18px] desktop:text-[20px] desktop-lg:text-[22px]">
                       <Rich text={block.text} />
                     </p>
                   )}
@@ -226,7 +226,7 @@ export function CaseStudyBlocks({ blocks }: { blocks: CaseStudyBlock[] }) {
                       {block.bullets.map((b) => (
                         <li
                           key={b}
-                          className="list-disc text-[12px] leading-relaxed text-gray-2 tablet:text-[18px] desktop:text-[20px] desktop-lg:text-[22px]"
+                          className="list-disc text-[12px] leading-relaxed text-gray-2 dark:text-dark-gray-2 tablet:text-[18px] desktop:text-[20px] desktop-lg:text-[22px]"
                         >
                           <Rich text={b} />
                         </li>

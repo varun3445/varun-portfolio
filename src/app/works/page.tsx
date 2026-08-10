@@ -8,7 +8,7 @@ export default function WorksPage() {
   const [pinned1, pinned2, ...rest] = PROJECTS;
 
   return (
-    <main className="flex flex-1 flex-col bg-white">
+    <main className="flex flex-1 flex-col bg-white dark:bg-dark-bg">
       <section className="w-full px-[15px] pb-16 pt-40 tablet:px-[30px] desktop:px-[64px]">
         <div className="mx-auto w-full max-w-[2000px]">
           <h1 className="text-[36px] font-medium capitalize leading-[1.1] tablet:text-[68px] desktop:text-[84px] desktop-lg:text-[96px]">
@@ -51,7 +51,7 @@ export default function WorksPage() {
             Just a bit more visuals.
           </h2>
           <div className="grid grid-cols-1 gap-[24px] tablet:grid-cols-2 desktop:grid-cols-6">
-            <div className="relative aspect-[4/3] overflow-hidden rounded-3xl bg-surface tablet:col-span-2 desktop:col-span-3">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-3xl bg-surface dark:bg-dark-surface tablet:col-span-2 desktop:col-span-3">
               <Image
                 src="/images/dt-pro-bento.png"
                 alt=""
@@ -60,7 +60,7 @@ export default function WorksPage() {
                 className="object-cover"
               />
             </div>
-            <div className="relative aspect-[4/3] overflow-hidden rounded-3xl bg-surface tablet:aspect-square desktop:aspect-[4/3] desktop:col-span-3">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-3xl bg-surface dark:bg-dark-surface tablet:aspect-square desktop:aspect-[4/3] desktop:col-span-3">
               <Image
                 src="/images/vsxbs-bento.png"
                 alt=""
@@ -69,14 +69,14 @@ export default function WorksPage() {
                 className="object-cover"
               />
             </div>
-            <div className="aspect-square overflow-hidden rounded-3xl bg-surface desktop:col-span-2">
+            <div className="aspect-square overflow-hidden rounded-3xl bg-surface dark:bg-dark-surface desktop:col-span-2">
               <iframe
                 className="block h-full w-full border-0"
                 src="https://embed.figma.com/proto/LHPdKBgES63041Ijjs9fJJ/IDXF---24-Steps?node-id=74-5&p=f&viewport=-382%2C-548%2C0.14&scaling=contain&content-scaling=fixed&page-id=0%3A1&embed-host=share&footer=false&hide-ui=1"
                 allowFullScreen
               />
             </div>
-            <div className="relative aspect-square overflow-hidden rounded-3xl bg-surface desktop:col-span-2">
+            <div className="relative aspect-square overflow-hidden rounded-3xl bg-surface dark:bg-dark-surface desktop:col-span-2">
               <Image
                 src="/images/p5-bento-v2.png"
                 alt=""
@@ -85,7 +85,7 @@ export default function WorksPage() {
                 className="object-cover"
               />
             </div>
-            <div className="relative aspect-square overflow-hidden rounded-3xl bg-surface desktop:col-span-2">
+            <div className="relative aspect-square overflow-hidden rounded-3xl bg-surface dark:bg-dark-surface desktop:col-span-2">
               <Image
                 src="/images/p4-bento-v2.png"
                 alt=""

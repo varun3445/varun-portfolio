@@ -4,6 +4,7 @@ import "./globals.css";
 import { SmoothScroll } from "@/components/SmoothScroll";
 import { CustomCursorProvider } from "@/components/CustomCursor";
 import { Navbar } from "@/components/Navbar";
+import { THEME_INIT_SCRIPT } from "@/components/ThemeToggle";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -32,14 +33,16 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en"
       className={`${inter.variable} ${poppins.variable} ${roboto.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
       <head>
         <link
           rel="stylesheet"
           href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap"
         />
+        <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
       </head>
-      <body className="min-h-full flex flex-col bg-white text-black">
+      <body className="min-h-full flex flex-col bg-white text-black dark:bg-dark-bg dark:text-dark-text">
         <CustomCursorProvider>
           <SmoothScroll>
             <Navbar />

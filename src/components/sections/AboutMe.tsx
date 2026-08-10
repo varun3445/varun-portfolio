@@ -11,11 +11,11 @@ export function AboutMe() {
   return (
     <section
       id="about"
-      className="flex w-full scroll-mt-[110px] flex-col gap-[30px] bg-white px-[15px] pb-[40px] tablet:gap-[50px] tablet:px-[30px] tablet:pb-[50px] desktop:gap-[60px] desktop:px-[64px] desktop:pb-[96px]"
+      className="flex w-full scroll-mt-[110px] flex-col gap-[30px] bg-white dark:bg-dark-bg px-[15px] pb-[40px] tablet:gap-[50px] tablet:px-[30px] tablet:pb-[50px] desktop:gap-[60px] desktop:px-[64px] desktop:pb-[96px]"
     >
       <div className="mx-auto flex w-full max-w-[2000px] flex-col gap-[30px] tablet:gap-[50px] desktop:gap-[60px]">
         <motion.div
-          className="h-px w-full bg-black"
+          className="h-px w-full bg-black dark:bg-dark-text"
           initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={viewport}
@@ -63,7 +63,7 @@ export function AboutMe() {
 
       <div className="mx-auto flex w-full max-w-[2000px] flex-col gap-6 desktop:flex-row desktop:items-start desktop:justify-between">
         <div className="flex items-center gap-2">
-          <span className="h-2.5 w-2.5 rounded-full bg-black" />
+          <span className="h-2.5 w-2.5 rounded-full bg-black dark:bg-dark-text" />
           <h2 className="text-[16px] font-medium uppercase tracking-wide desktop:text-[18px]">
             About Me
           </h2>

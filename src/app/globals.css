@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 :root {
   --color-bg: rgb(10, 10, 12);
@@ -8,6 +9,12 @@
   --color-gray-2: rgb(61, 61, 61);
   --color-surface: rgb(245, 245, 245);
   --color-heading: rgb(252, 252, 250);
+
+  --color-dark-bg: rgb(10, 10, 12);
+  --color-dark-text: rgb(252, 252, 250);
+  --color-dark-gray-1: rgb(90, 90, 90);
+  --color-dark-gray-2: rgb(180, 180, 180);
+  --color-dark-surface: rgb(26, 26, 28);
 }
 
 @theme inline {
@@ -18,6 +25,12 @@
   --color-gray-2: var(--color-gray-2);
   --color-surface: var(--color-surface);
   --color-heading: var(--color-heading);
+
+  --color-dark-bg: var(--color-dark-bg);
+  --color-dark-text: var(--color-dark-text);
+  --color-dark-gray-1: var(--color-dark-gray-1);
+  --color-dark-gray-2: var(--color-dark-gray-2);
+  --color-dark-surface: var(--color-dark-surface);
 
   --font-inter: var(--font-inter);
   --font-poppins: var(--font-poppins);
@@ -34,6 +47,11 @@ body {
   color: var(--color-black);
   font-family: var(--font-poppins), sans-serif;
   cursor: none;
+}
+
+.dark body {
+  background: var(--color-dark-bg);
+  color: var(--color-dark-text);
 }
 
 @media (pointer: coarse) {
