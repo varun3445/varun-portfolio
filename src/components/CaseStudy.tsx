@@ -13,10 +13,7 @@ type CaseStudyProps = {
 export function CaseStudy({ title, heroImage, summary, appLink, blocks }: CaseStudyProps) {
   return (
     <main className="flex flex-1 flex-col bg-white">
-      <section
-        className="flex w-full flex-col items-center px-4 pb-[24px] pt-[100px] tablet:px-[40px] tablet:pb-[60px] tablet:pt-[100px] desktop:px-[64px]"
-        style={{ minHeight: "90vh" }}
-      >
+      <section className="flex w-full flex-col items-center px-4 pb-[24px] pt-[100px] tablet:px-[40px] tablet:pb-[60px] tablet:pt-[100px] desktop:px-[64px]">
         <div className="mx-auto flex w-full max-w-[1500px] flex-col gap-4 tablet:gap-6 desktop:gap-10">
           <div className="flex flex-wrap items-center justify-between gap-4 pb-4">
             <h1 className="font-clash text-[36px] font-medium capitalize leading-[1.1] tablet:text-[68px] desktop:text-[84px] desktop-lg:text-[96px]">
