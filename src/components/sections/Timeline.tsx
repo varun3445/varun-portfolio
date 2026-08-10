@@ -131,8 +131,10 @@ export function Timeline() {
       id="journey"
       className="flex w-full scroll-mt-[110px] flex-col gap-[30px] bg-white px-[15px] py-[60px] tablet:gap-[50px] tablet:px-[30px] tablet:py-[50px] desktop:gap-[60px] desktop:px-[64px] desktop:py-[60px]"
     >
-      <TimelineGroup label="Excperience" title="My Journey" items={EXPERIENCE} />
-      <TimelineGroup label="Education" title="Where I Studied" items={EDUCATION} />
+      <div className="mx-auto flex w-full max-w-[2000px] flex-col gap-[30px] tablet:gap-[50px] desktop:gap-[60px]">
+        <TimelineGroup label="Excperience" title="My Journey" items={EXPERIENCE} />
+        <TimelineGroup label="Education" title="Where I Studied" items={EDUCATION} />
+      </div>
     </section>
   );
 }

@@ -13,37 +13,39 @@ export function AboutMe() {
       id="about"
       className="flex w-full scroll-mt-[110px] flex-col gap-[30px] bg-white px-[15px] pb-[40px] tablet:gap-[50px] tablet:px-[30px] tablet:pb-[50px] desktop:gap-[60px] desktop:px-[64px] desktop:pb-[96px]"
     >
-      <motion.div
-        className="h-px w-full bg-black"
-        initial={{ opacity: 0, y: 60 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={viewport}
-        transition={{ ...spring, delay: 0 }}
-      />
+      <div className="mx-auto flex w-full max-w-[2000px] flex-col gap-[30px] tablet:gap-[50px] desktop:gap-[60px]">
+        <motion.div
+          className="h-px w-full bg-black"
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={viewport}
+          transition={{ ...spring, delay: 0 }}
+        />
 
-      <div className="flex flex-col gap-6 tablet:flex-row tablet:items-start tablet:justify-between">
-        <motion.p
-          className="text-[16px] font-medium tablet:text-[18px] desktop:text-[20px] desktop-lg:text-[22px]"
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={viewport}
-          transition={{ ...spring, delay: 0.15 }}
-        >
-          Based in London,
-          <br />
-          solving problems globally.
-        </motion.p>
-        <motion.p
-          className="text-[16px] font-medium tablet:w-[65%] tablet:text-[18px] tablet:text-right desktop:w-1/2 desktop:text-[20px] desktop-lg:text-[22px]"
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={viewport}
-          transition={{ ...spring, delay: 0.3 }}
-        >
-          Designer who ships,
-          <br />
-          from no-code sites to full AI products.
-        </motion.p>
+        <div className="flex flex-col gap-6 tablet:flex-row tablet:items-start tablet:justify-between">
+          <motion.p
+            className="text-[16px] font-medium tablet:text-[18px] desktop:text-[20px] desktop-lg:text-[22px]"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={viewport}
+            transition={{ ...spring, delay: 0.15 }}
+          >
+            Based in London,
+            <br />
+            solving problems globally.
+          </motion.p>
+          <motion.p
+            className="text-[16px] font-medium tablet:w-[65%] tablet:text-[18px] tablet:text-right desktop:w-1/2 desktop:text-[20px] desktop-lg:text-[22px]"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={viewport}
+            transition={{ ...spring, delay: 0.3 }}
+          >
+            Designer who ships,
+            <br />
+            from no-code sites to full AI products.
+          </motion.p>
+        </div>
       </div>
 
       <motion.div
@@ -59,7 +61,7 @@ export function AboutMe() {
         />
       </motion.div>
 
-      <div className="flex flex-col gap-6 desktop:flex-row desktop:items-start desktop:justify-between">
+      <div className="mx-auto flex w-full max-w-[2000px] flex-col gap-6 desktop:flex-row desktop:items-start desktop:justify-between">
         <div className="flex items-center gap-2">
           <span className="h-2.5 w-2.5 rounded-full bg-black" />
           <h2 className="text-[16px] font-medium uppercase tracking-wide desktop:text-[18px]">

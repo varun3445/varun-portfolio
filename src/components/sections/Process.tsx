@@ -58,43 +58,45 @@ export function Process() {
 
   return (
     <section className="w-full bg-white px-[15px] pb-[30px] tablet:px-[30px] tablet:pb-[50px] desktop:px-[64px] desktop:pb-[60px]">
-      <div className="w-full">
-        <div className="h-px w-full bg-black" />
-      </div>
+      <div className="mx-auto w-full max-w-[2000px]">
+        <div className="w-full">
+          <div className="h-px w-full bg-black" />
+        </div>
 
-      <div ref={wrapperRef} className="relative h-[300vh]">
-        <div className="sticky top-0 flex h-screen w-full flex-col justify-center gap-[30px] overflow-hidden py-20 tablet:gap-[50px] desktop:gap-[60px]">
-          <div className="flex items-center gap-2">
-            <span className="h-2.5 w-2.5 rounded-full bg-black" />
-            <h2 className="text-[16px] font-medium uppercase tracking-wide desktop:text-[18px]">
-              Process
-            </h2>
-          </div>
-          <h3 className="text-[36px] font-medium capitalize leading-[1.1] tablet:text-[68px] desktop:text-[84px] desktop-lg:text-[96px]">
-            How I Work
-          </h3>
+        <div ref={wrapperRef} className="relative h-[300vh]">
+          <div className="sticky top-0 flex h-screen w-full flex-col justify-center gap-[30px] overflow-hidden py-20 tablet:gap-[50px] desktop:gap-[60px]">
+            <div className="flex items-center gap-2">
+              <span className="h-2.5 w-2.5 rounded-full bg-black" />
+              <h2 className="text-[16px] font-medium uppercase tracking-wide desktop:text-[18px]">
+                Process
+              </h2>
+            </div>
+            <h3 className="text-[36px] font-medium capitalize leading-[1.1] tablet:text-[68px] desktop:text-[84px] desktop-lg:text-[96px]">
+              How I Work
+            </h3>
 
-          <motion.div style={{ x }} className="relative flex items-stretch gap-8">
-            {STEPS.map((step, i) => (
-              <div
-                key={step.number}
-                ref={i === STEPS.length - 1 ? lastCardRef : undefined}
-                className="flex h-[420px] w-[320px] shrink-0 flex-col gap-4 rounded-[15px] border border-black p-8 tablet:h-[480px] md:w-[440px]"
-              >
-                <div className="flex min-h-[68px] items-start tablet:min-h-[88px] desktop:min-h-[108px]">
-                  <h4 className="text-[28px] font-medium leading-[1.2] tablet:text-[36px] desktop:text-[44px]">
-                    {step.step}
-                  </h4>
+            <motion.div style={{ x }} className="relative flex items-stretch gap-8">
+              {STEPS.map((step, i) => (
+                <div
+                  key={step.number}
+                  ref={i === STEPS.length - 1 ? lastCardRef : undefined}
+                  className="flex h-[420px] w-[320px] shrink-0 flex-col gap-4 rounded-[15px] border border-black p-8 tablet:h-[480px] md:w-[440px]"
+                >
+                  <div className="flex min-h-[68px] items-start tablet:min-h-[88px] desktop:min-h-[108px]">
+                    <h4 className="text-[28px] font-medium leading-[1.2] tablet:text-[36px] desktop:text-[44px]">
+                      {step.step}
+                    </h4>
+                  </div>
+                  <span className="text-6xl font-medium tablet:text-8xl desktop:text-[144px]">
+                    {step.number}
+                  </span>
+                  <p className="text-[14px] leading-relaxed text-gray-2 desktop:text-[16px]">
+                    {step.description}
+                  </p>
                 </div>
-                <span className="text-6xl font-medium tablet:text-8xl desktop:text-[144px]">
-                  {step.number}
-                </span>
-                <p className="text-[14px] leading-relaxed text-gray-2 desktop:text-[16px]">
-                  {step.description}
-                </p>
-              </div>
-            ))}
-          </motion.div>
+              ))}
+            </motion.div>
+          </div>
         </div>
       </div>
     </section>
