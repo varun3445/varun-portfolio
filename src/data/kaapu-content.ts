@@ -58,9 +58,6 @@ export const kaapuBlocks: CaseStudyBlock[] = [
     text: "The original product concept was a manual mood and symptom tracker. Within the first weeks of testing, retention dropped because daily logging felt irrelevant to users who weren't symptomatic. After speaking directly with users in online care communities, the product was pivoted entirely — from manual input to voice-triggered, symptom-led interaction. A conversational AI layer was added to help users describe what they were experiencing naturally, without clinical language or structured forms.",
   },
 
-  { type: "heading", text: "UI for Launch" },
-  { type: "image", src: "/images/eV0jR6oDGXZYQtvGzLkzfarOHI.png", aspect: 3392 / 5424, widthPct: 64 },
-
   { type: "heading", text: "Post Designs Outcome" },
   {
     type: "columns",

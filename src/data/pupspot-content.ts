@@ -54,9 +54,6 @@ export const pupspotBlocks: CaseStudyBlock[] = [
     text: "Student communities are highly motivated but time-poor. Animal welfare organisations struggle to reach younger audiences through traditional channels. The gap isn't interest — it's accessibility and relevance. By anchoring the experience in physical locations students already frequent, PupSpot AR reduces the barrier to participation from “I should do something” to “I can do something right here.”",
   },
 
-  { type: "heading", text: "UI for Launch" },
-  { type: "image", src: "/images/eV0jR6oDGXZYQtvGzLkzfarOHI.png", aspect: 3392 / 5424, widthPct: 64 },
-
   { type: "heading", text: "Post Designs Outcome" },
   {
     type: "columns",

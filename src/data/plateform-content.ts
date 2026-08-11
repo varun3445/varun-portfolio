@@ -49,9 +49,6 @@ export const plateformBlocks: CaseStudyBlock[] = [
     text: "Hounslow is one of London's most culturally diverse boroughs, with residents spanning a wide range of ages, backgrounds, and digital literacy levels. Existing digital touchpoints were fragmented — residents had to navigate multiple council pages, social media groups, and third-party sites to find basic community information. There was no single trusted space. Our objective was to design a platform that felt welcoming, easy to navigate, and genuinely useful for the full breadth of the community — not just the most digitally active residents.",
   },
 
-  { type: "heading", text: "UI for Launch" },
-  { type: "image", src: "/images/eV0jR6oDGXZYQtvGzLkzfarOHI.png", aspect: 3392 / 5424, widthPct: 64 },
-
   { type: "heading", text: "Post Designs Outcome" },
   {
     type: "columns",

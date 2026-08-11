@@ -67,9 +67,6 @@ export const bbmpBlocks: CaseStudyBlock[] = [
     text: "The design response was a three-interface ecosystem: an exterior panel for real-time route and seat availability, a passenger ticketing panel with digital payment integration, and a stripped-back driver cluster focused entirely on navigation clarity.",
   },
 
-  { type: "heading", text: "UI for Launch" },
-  { type: "image", src: "/images/eV0jR6oDGXZYQtvGzLkzfarOHI.png", aspect: 3392 / 5424, widthPct: 64 },
-
   { type: "heading", text: "Post Designs Outcome" },
   {
     type: "columns",
