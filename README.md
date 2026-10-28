@@ -26,15 +26,6 @@ A showcase site with in depth case studies, each rendered from typed content blo
 - **Typed case study blocks** (`src/components/CaseStudyBlocks.tsx`) so content lives in `src/data` and layout stays consistent.
 - Custom cursor and motion details built as small reusable components.
 
-## Run it locally
-
-```bash
-npm install
-npm run dev
-```
-
-Open http://localhost:3000.
-
 ## Related
 
 - [`varun-portfolio-v2`](https://github.com/varun3445/varun-portfolio-v2) is the next iteration.
